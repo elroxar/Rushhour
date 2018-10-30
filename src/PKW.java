@@ -7,10 +7,15 @@ public class PKW extends Fahrzeug {
     /* Attribute*/
     private boolean zIstRotesAuto;
     
+    /* Methoden */
     PKW(int pX1, int pY1, int pX2, int pY2, boolean pIstRotesAuto) {
         super(pX1, pY1, pX2, pY2);
         zIstRotesAuto = pIstRotesAuto;
     }
+    
+    /**
+     * @return
+     */
     public boolean istRotesAuto(){
         return this.zIstRotesAuto;
     }
