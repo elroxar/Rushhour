@@ -14,4 +14,4 @@ public class Main extends JFrame
 	cp.add(zgenerate);
 	setVisible(true);
   }
-}
+}//Ende Klasse: Main

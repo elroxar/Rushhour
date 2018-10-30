@@ -14,7 +14,6 @@ public class Spielbrett
         zSpielbrett = new boolean[6][6];
         zLV = new LevelVerwaltung();
     }
-    
     /**
      * @param pLevel Nummer des zu Ladenden Levels
      */
@@ -46,7 +45,7 @@ public class Spielbrett
                     this.belegeFeld(lX3, lY3);
                     break;
                 default:
-                    lX1 = lLevel[i].charAt(0);
+					lX1 = lLevel[i].charAt(0);
                     lY1 = lLevel[i].charAt(2);
                     lX2 = lLevel[i].charAt(4);
                     lY2 = lLevel[i].charAt(6);
@@ -57,8 +56,11 @@ public class Spielbrett
             }
         }
     }
-    
-    private void belegeFeld(int pX, int pY){
+    /**
+	 * @param pX x-Koordinate des zu belegenden Feldes
+	 * @param pY y-Koordinate des zu belegenden Feldes
+	 */
+	private void belegeFeld(int pX, int pY){
         zSpielbrett[pX][pY] = true;
     }
     /**
@@ -69,6 +71,5 @@ public class Spielbrett
     public boolean istBelegt(int pX, int pY){
         return zSpielbrett[pX][pY];
     }
-    
 }//Ende Klasse: Spielbrett
 

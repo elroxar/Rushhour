@@ -14,7 +14,7 @@ public class PKW extends Fahrzeug {
     }
     
     /**
-     * @return
+     * @return liefert, ob das Auto das 'rote' Auto ist
      */
     public boolean istRotesAuto(){
         return this.zIstRotesAuto;

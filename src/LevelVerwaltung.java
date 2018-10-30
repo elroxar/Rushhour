@@ -1,12 +1,11 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
-
 /**
  * @author theo
  * @version 30/10/18
  */
 public class LevelVerwaltung {
-    
+	
     /* Attribute */
     private String[][] zLevel;
     private FileReader fr;
@@ -16,7 +15,6 @@ public class LevelVerwaltung {
     LevelVerwaltung(){
         zLevel = new String[40][];
     }
-    
     private void liesLevelEin(){
         try {
             fr = new FileReader("data/level.csv");
