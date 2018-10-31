@@ -13,11 +13,9 @@ public class LKW extends Fahrzeug {
         zX3 = pX3;
         zY3 = pY3;
     }
-    
     public int gibX3(){
         return this.zX3;
     }
-    
     public int gibY3(){
         return this.zY3;
     }
