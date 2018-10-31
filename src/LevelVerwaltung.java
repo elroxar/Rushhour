@@ -23,7 +23,7 @@ public class LevelVerwaltung {
             while(br.ready()) {
                 String lLine = br.readLine();
                 int lFahrzeugAnzahl = lLine.charAt(0);
-                lLine = lLine.substring(1);
+                lLine = lLine.substring(2);
                 zLevel[i-1] = lLine.split(";");
             }
         }catch(Exception e){System.out.println("Fehler beim Einlesen der Datei");}
