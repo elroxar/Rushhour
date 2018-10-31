@@ -27,14 +27,8 @@ public void paint (Graphics arg)
 	  //arg.drawRect(Anfangsbreitex, Anfangsbreitey, 100,100);
 	  for (int x = 0;x<=6;x++)
 	  {
-		for(int y = 0; y<=6;y++)  
-		{
-	      arg.drawRect(Anfangsbreitex,Anfangsbreitey,100+(Anfangsbreitex+16)*x,100+(Anfangsbreitey+16)*y);
-			
-			
-			
-		}
-	  
+		for(int y = 0; y<=6;y++)
+			arg.drawRect(Anfangsbreitex, Anfangsbreitey, 100 + (Anfangsbreitex + 16) * x, 100 + (Anfangsbreitey + 16) * y);
 	  }
    }
 }
