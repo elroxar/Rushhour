@@ -25,20 +25,20 @@ public class Spielbrett
             switch(lLevel[i].charAt(0)){
                 case 'P':
                     lX1 = lLevel[i].charAt(2);
-                    lY1 = lLevel[i].charAt(4);
-                    lX2 = lLevel[i].charAt(6);
-                    lY2 = lLevel[i].charAt(8);
+                    lY1 = lLevel[i].charAt(3);
+                    lX2 = lLevel[i].charAt(5);
+                    lY2 = lLevel[i].charAt(6);
                     zFahrzeuge[i] = new PKW(lX1, lY1, lX2, lY2, false);
                     this.belegeFeld(lX1, lY1);
                     this.belegeFeld(lX2, lY2);
                     break;
                 case 'L':
                     lX1 = lLevel[i].charAt(2);
-                    lY1 = lLevel[i].charAt(4);
-                    lX2 = lLevel[i].charAt(6);
-                    lY2 = lLevel[i].charAt(8);
-                    lX3 = lLevel[i].charAt(10);
-                    lY3 = lLevel[i].charAt(12);
+                    lY1 = lLevel[i].charAt(3);
+                    lX2 = lLevel[i].charAt(5);
+                    lY2 = lLevel[i].charAt(6);
+                    lX3 = lLevel[i].charAt(8);
+                    lY3 = lLevel[i].charAt(9);
                     zFahrzeuge[i] = new LKW(lX1, lY1, lX2, lY2, lX3, lY3);
                     this.belegeFeld(lX1, lY1);
                     this.belegeFeld(lX2, lY2);
@@ -46,15 +46,16 @@ public class Spielbrett
                     break;
                 default:
 					lX1 = lLevel[i].charAt(0);
-                    lY1 = lLevel[i].charAt(2);
-                    lX2 = lLevel[i].charAt(4);
-                    lY2 = lLevel[i].charAt(6);
+                    lY1 = lLevel[i].charAt(1);
+                    lX2 = lLevel[i].charAt(3);
+                    lY2 = lLevel[i].charAt(4);
                     zFahrzeuge[i] = new PKW(lX1, lY1, lX2, lY2, true);
                     this.belegeFeld(lX1, lY1);
                     this.belegeFeld(lX2, lY2);
                     break;
             }
         }
+        
     }
     /**
 	 * @param pX x-Koordinate des zu belegenden Feldes
@@ -71,5 +72,8 @@ public class Spielbrett
     public boolean istBelegt(int pX, int pY){
         return zSpielbrett[pX][pY];
     }
+    public Fahrzeug[] gibLevel(int pLevel){
+		this.ladeLevel(pLevel);
+    	return zFahrzeuge;
+    }
 }//Ende Klasse: Spielbrett
-
