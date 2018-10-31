@@ -1,34 +1,40 @@
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
+import java.awt.Canvas;
+import java.awt.Color;
 import java.awt.Graphics;
-/**
- * @author ben
- * @version 30/10/18
- */
+import java.awt.Toolkit;
+
 public class Draw extends Canvas
 {
-	/* Attribute */
+  int x,y;
+  int Anfangsbreitex,Anfangsbreitey;
+	public Draw()
+   {
+	 x = (int)Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+     y = (int)Toolkit.getDefaultToolkit().getScreenSize().getHeight();
+  	 setSize(x,y);
+    Anfangsbreitex = 66;
+    Anfangsbreitey = 66;
+   
+   }
 	
-	/* Methoden */
-   public Draw()
+
+@Override
+public void paint (Graphics arg)
    {
-  	 setSize(900,900);
-  	 setBackground(Color.black);
+	  //Vierecke 100,100 Platz zwischen feldern 16
+	  arg.setColor(Color.black);
+	  arg.drawRect(50,50,700,700);
+	  //arg.drawRect(Anfangsbreitex, Anfangsbreitey, 100,100);
+	  for (int x = 0;x<=6;x++)
+	  {
+		for(int y = 0; y<=6;y++)  
+		{
+	      arg.drawRect(Anfangsbreitex,Anfangsbreitey,100+(Anfangsbreitex+16)*x,100+(Anfangsbreitey+16)*y);
+			
+			
+			
+		}
+	  
+	  }
    }
-	/**
-	 *
-	 * @param arg Graphics Object
-	 */
-	public void paint(Graphics arg)
-   {
-	  //Vierecke 100,100 Platz zwischen feldern 42
-	  arg.setColor(Color.blue);
-	  arg.drawLine(50,50,50,850);//oben nach unten links
-	  arg.drawLine(50,50,850,50);//links nach rechts oben
-	  arg.drawLine(850,50,850,334);//oben nach unten rechts 1
-	  arg.drawLine(850,518,850,850);//oben nach unten rechts 2
-	  arg.drawLine(50,850,850,850);//links nach rechts unten 
-	  System.out.println("baaaaaggggg");
-   }
-}//Ende Klasse: Draw
+}

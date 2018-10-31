@@ -1,20 +1,20 @@
 import javax.swing.*;
+import java.awt.event.*;
 import java.awt.*;
-//import java.awt.event.*;
 public class Main extends JFrame 
 {
-	/* Attribute */
-   private Draw zGenerate;
-   
-   /* Methoden */
-  public Main()
+   private Draw zgenerate;
+  public Main() 
   {
-	setSize(1000,1000);
-	setLocation(100,100);
+	
+	setLocation(0,0);
 	Container cp = getContentPane();
 	cp.setLayout(new FlowLayout());
-	zGenerate = new Draw();
-	cp.add(zGenerate);
+	zgenerate = new Draw();
+	cp.add(zgenerate);
+	setUndecorated(true);
+	setSize((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int)Toolkit.getDefaultToolkit().getScreenSize().getHeight());
+	setAlwaysOnTop(true);
 	setVisible(true);
   }
-}//Ende Klasse: Main
+}
