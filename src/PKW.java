@@ -12,7 +12,6 @@ public class PKW extends Fahrzeug {
         super(pX1, pY1, pX2, pY2);
         zIstRotesAuto = pIstRotesAuto;
     }
-    
     /**
      * @return liefert, ob das Auto das 'rote' Auto ist
      */

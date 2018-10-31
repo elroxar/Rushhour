@@ -28,7 +28,6 @@ public class LevelVerwaltung {
             }
         }catch(Exception e){System.out.println("Fehler beim Einlesen der Datei");}
     }
-    
     public String[] gibLevel(int pLevel){
         return this.zLevel[pLevel];
     }
