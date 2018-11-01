@@ -6,17 +6,37 @@ public class Spielbrett
 {
     /* Attribute */
     private boolean[][] zSpielbrett;
+    private int[][][] zSpielbrettKoord;
     private Fahrzeug[] zFahrzeuge;
     private LevelVerwaltung zLV;
     
     /* Methoden */
     Spielbrett(){
         zSpielbrett = new boolean[6][6];
+        zSpielbrettKoord = new int [6][6][2];
         zLV = new LevelVerwaltung();
+        fuelleSpielbrettKoord();
     }
-    /**
+    /*
      * @param pLevel Nummer des zu Ladenden Levels
      */
+    public void fuelleSpielbrettKoord() {
+        int zMarginX = 175,zMarginY = 175;
+        int zFeld = 96;
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 6; j++) {
+                //fensterrand zum ersten kasten 175
+                    zSpielbrettKoord[i][j][0] = zMarginX;
+                    zSpielbrettKoord[i][j][1] = zMarginY;
+                    zMarginX += zFeld + 3;
+                    System.out.println(zSpielbrettKoord[i][j][0]);
+                    System.out.println(zSpielbrettKoord[i][j][1]);
+            }
+            zMarginY += zFeld + 3;
+            System.out.println(zMarginY);
+        }
+    }
+
     private void ladeLevel(int pLevel){
         String[] lLevel = zLV.gibLevel(pLevel);
         zFahrzeuge = new Fahrzeug[lLevel.length];

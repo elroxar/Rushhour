@@ -12,7 +12,6 @@ public class Main extends JFrame {
 	/* Methoden */
  	 public Main() 
 	  {
-		
 		setLocation(250,10);
 		Container cp = getContentPane();
 		cp.setLayout(new FlowLayout());
