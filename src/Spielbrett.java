@@ -36,7 +36,6 @@ public class Spielbrett
             System.out.println(zMarginY);
         }
     }
-
     private void ladeLevel(int pLevel){
         String[] lLevel = zLV.gibLevel(pLevel);
         zFahrzeuge = new Fahrzeug[lLevel.length];
@@ -75,7 +74,6 @@ public class Spielbrett
                     break;
             }
         }
-        
     }
     /**
 	 * @param pX x-Koordinate des zu belegenden Feldes
