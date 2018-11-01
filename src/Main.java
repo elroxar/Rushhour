@@ -15,7 +15,7 @@ public class Main extends JFrame implements MouseListener
     private JMenu Levelauswahl;
     private JMenuItem Level;
 public class Main extends JFrame {
-    /* Attribute */
+    /* Attribute *//
     private Draw zgenerate;
 >>>>>>>
     Stashed changes
