@@ -15,7 +15,7 @@ public class Draw extends Canvas {
 
 	@Override
 	public void paint(Graphics arg) {
-		// Vierecke 95,95 Platz zwischen feldern 16//
+		// Vierecke 95,95 Platz zwischen feldern 16///
 		arg.setColor(Color.black);
 		arg.drawRect(50, 50, 700, 700);
 
