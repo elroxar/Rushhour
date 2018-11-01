@@ -28,5 +28,5 @@ hs_err_pid*
 #*.log
 
 .idea/
-Rushhour.iml
 out/
+/Rushhour.iml

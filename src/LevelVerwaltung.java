@@ -13,7 +13,8 @@ public class LevelVerwaltung {
     
     /* Methoden */
     LevelVerwaltung(){
-        zLevel = new String[40][];
+        zLevel = new String[4][]; //TODO: Zurück auf 40 ändern
+        this.liesLevelEin();
     }
     private void liesLevelEin(){
         try {
