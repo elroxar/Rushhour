@@ -7,12 +7,11 @@ import java.awt.*;
 public class Main extends JFrame {
 	/* Attribute */
   	private JLabel zZuege;
- 	 private Draw zgenerate;
+    private Draw zgenerate;
 	
 	/* Methoden */
- 	 public Main() 
-	  {
-	  	zZuege = new JLabel("Zug: ");
+ 	public Main() {
+		zZuege = new JLabel("Zug: ");
 		setLocation(250,10);
 		Container cp = getContentPane();
 		cp.setLayout(new FlowLayout());
@@ -26,4 +25,7 @@ public class Main extends JFrame {
 		cp.add(zZuege);
 		zZuege.setLocation(300,20);
   	}
+  	public void update(){
+ 	 	//TODO: Implementieren
+    }
 }

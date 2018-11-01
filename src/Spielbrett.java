@@ -17,8 +17,8 @@ public class Spielbrett
         zLV = new LevelVerwaltung();
         fuelleSpielbrettKoord();
     }
-    /*
-     * @param pLevel Nummer des zu Ladenden Levels
+    /**
+     *
      */
     public void fuelleSpielbrettKoord() {
         int zMarginX = 175,zMarginY = 175;
@@ -29,16 +29,20 @@ public class Spielbrett
                     zSpielbrettKoord[i][j][0] = zMarginX;
                     zSpielbrettKoord[i][j][1] = zMarginY;
                     zMarginX += zFeld + 3;
-                    System.out.println(zSpielbrettKoord[i][j][0]);
-                    System.out.println(zSpielbrettKoord[i][j][1]);
+                    //System.out.println(zSpielbrettKoord[i][j][0]);
+                    //System.out.println(zSpielbrettKoord[i][j][1]);
             }
             zMarginY += zFeld + 3;
-            System.out.println(zMarginY);
+            //System.out.println(zMarginY);
         }
     }
-    private void ladeLevel(int pLevel){
+	/**
+	 * @param pLevel Nummer des zu ladenden Levels
+	 */
+	private void ladeLevel(int pLevel){
         String[] lLevel = zLV.gibLevel(pLevel);
-        zFahrzeuge = new Fahrzeug[lLevel.length];
+        //zFahrzeuge = new Fahrzeug[lLevel.length];
+		zFahrzeuge = new Fahrzeug[4];
         for(int i = 0; i<zFahrzeuge.length; i++){
             int lX1, lY1, lX2, lY2, lX3, lY3;
             switch(lLevel[i].charAt(0)){
@@ -90,8 +94,13 @@ public class Spielbrett
     public boolean istBelegt(int pX, int pY){
         return zSpielbrett[pX][pY];
     }
-    public Fahrzeug[] gibLevel(int pLevel){
-		this.ladeLevel(pLevel);
+	
+	/**
+	 * @param pLevel reales Level (Position im Array + 1)
+	 * @return liefert die Fahrzeugobjekte des aktuellen Levels
+	 */
+	public Fahrzeug[] gibLevel(int pLevel){
+		this.ladeLevel(pLevel - 1);
     	return zFahrzeuge;
     }
 }//Ende Klasse: Spielbrett

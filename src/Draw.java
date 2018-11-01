@@ -23,6 +23,5 @@ public class Draw extends Canvas {
 			for (int y = 0; y < 6; y++)
 				arg.drawRect(75 + (breite + 16) * x, 75 + (breite + 16) * y, breite, breite);
                 arg.clearRect(749, 297, 3, 96);
-                
 	}
 }
