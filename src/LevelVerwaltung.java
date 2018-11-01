@@ -14,9 +14,11 @@ public class LevelVerwaltung {
     /* Methoden */
     LevelVerwaltung(){
         zLevel = new String[4][]; //TODO: Zurück auf 40 ändern
-        this.liesLevelEin();
     }
-    private void liesLevelEin(){
+	/**
+	 *
+	 */
+	private void liesLevelEin(){
         try {
             fr = new FileReader("data/level.csv");
             br = new BufferedReader(fr);
@@ -25,11 +27,17 @@ public class LevelVerwaltung {
                 String lLine = br.readLine();
                 int lFahrzeugAnzahl = lLine.charAt(0);
                 lLine = lLine.substring(2);
+                zLevel[i-1] = new String[lFahrzeugAnzahl];
                 zLevel[i-1] = lLine.split(";");
             }
         }catch(Exception e){System.out.println("Fehler beim Einlesen der Datei");}
     }
-    public String[] gibLevel(int pLevel){
-        return this.zLevel[pLevel];
+	/**
+	 * @param pLevel
+	 * @return
+	 */
+	public String[] gibLevel(int pLevel){
+        this.liesLevelEin();
+    	return this.zLevel[pLevel];
     }
 }//Ende Klasse: LevelVerwaltung

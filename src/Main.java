@@ -25,7 +25,7 @@ public class Main extends JFrame {
 		cp.add(zZuege);
 		zZuege.setLocation(300,20);
   	}
-  	public void update(){
+  	public void update(Fahrzeug[] pFahrzeuge){
  	 	//TODO: Implementieren
     }
 }
