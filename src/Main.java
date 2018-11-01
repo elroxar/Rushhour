@@ -12,6 +12,7 @@ public class Main extends JFrame {
 	/* Methoden */
  	 public Main() 
 	  {
+	  	zZuege = new JLabel("Zug: ");
 		setLocation(250,10);
 		Container cp = getContentPane();
 		cp.setLayout(new FlowLayout());
