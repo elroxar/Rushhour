@@ -6,6 +6,7 @@ public class Test {
         //Main zSpiel = new Main();
         Spielbrett zBrett = new Spielbrett();
         int lLevel = 1;
+        /*
         do{
 	        Fahrzeug[] zFahrzeuge = zBrett.gibLevel(lLevel);
 	        for(Fahrzeug i : zFahrzeuge){
@@ -16,5 +17,13 @@ public class Test {
 		        lLevel++;
 	        }
         }while(lLevel <= 4);
+    */
+    Fahrzeug[] zFahrzeuge = zBrett.gibLevel(2);
+	        for(Fahrzeug i : zFahrzeuge){
+	        	if(i instanceof PKW)
+	        	    System.out.println("PKW: " + i.gibFarbe() + i.gibX1() + ',' + i.gibY1() + ',' + i.gibX2() + ',' + i.gibY2());
+	        	else
+	        		System.out.println("LKW: " + i.gibFarbe() + i.gibX1() + ',' + i.gibY1() + ',' + i.gibX2() + ',' + i.gibY2() + ',' + ((LKW)i).gibX3() + ',' + ((LKW) i).gibY3());
+	        }
     }
 }
