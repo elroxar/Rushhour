@@ -5,7 +5,7 @@
 public class Start {
 	
 	/* Attribute */
-	
+	//
 	/* Methoden */
 	public static void main(String[] args) {
 		new Main();
