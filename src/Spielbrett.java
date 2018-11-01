@@ -94,7 +94,6 @@ public class Spielbrett
     public boolean istBelegt(int pX, int pY){
         return zSpielbrett[pX][pY];
     }
-	
 	/**
 	 * @param pLevel reales Level (Position im Array + 1)
 	 * @return liefert die Fahrzeugobjekte des aktuellen Levels
