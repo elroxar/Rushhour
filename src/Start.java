@@ -1,5 +1,5 @@
 /**
- * @author ben
+ * @author ben,louis
  * @version 30/10/18
  */
 public class Start {
@@ -10,4 +10,4 @@ public class Start {
 	public static void main(String[] args) {
 		new Main();
 	}
-}//Ende Klasse: Start
+}//Ende Klasse: Start//
