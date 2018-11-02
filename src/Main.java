@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 <<<<<<< Updated upstream
-
+//Autor Louis,Ben
 /**
 *
 */
@@ -14,8 +14,9 @@ public class Main extends JFrame implements MouseListener
 === private JMenuBar MenueLeiste;
     private JMenu Levelauswahl;
     private JMenuItem Level;
+    private Fahrzeug[] zFahrzeuge;
 public class Main extends JFrame {
-    /* Attribute *//
+    /* Attribute */
     private Draw zgenerate;
 >>>>>>>
     Stashed changes
@@ -35,6 +36,7 @@ public class Main extends JFrame {
         setResizable(true);
         cp.add(zZuege);
         MenueLeiste = new JMenuBar();
+        set JMenuBar(MenueLeiste);
         Levelauswahl = new JMenu("LevelAuswahl");
 
         for (int i = 1; i < 40; i++)
@@ -50,7 +52,7 @@ public class Main extends JFrame {
     public void mouseClicked(MouseEvent e)//wenn Maus geklickt wurde//Feldabfrage//e.getx/y
     {
       zgenerate.repaint();
-      if()
+      if(e.getx())
     }
 
     public void mousePressed(MouseEvent e)//wenn Maustaste runtergedrückt wurde
