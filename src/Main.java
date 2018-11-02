@@ -29,8 +29,9 @@ public class Main extends JFrame implements MouseListener {
         setResizable(true);
         cp.add(zZuege);
         MenueLeiste = new JMenuBar();
-        set JMenuBar(MenueLeiste);
-        Levelauswahl = new JMenu("LevelAuswahl");
+        //TODO: Fix
+        //set JMenuBar(MenueLeiste);
+        //Levelauswahl = new JMenu("LevelAuswahl");
         for (int i = 1; i < 40; i++)
         {
             //zLevelauswahl.add(new Level("Level"+i));
@@ -39,9 +40,8 @@ public class Main extends JFrame implements MouseListener {
     public void update(){} //ist die mouseClicked Methode
     public void mouseClicked(MouseEvent e)//wenn Maus geklickt wurde//Feldabfrage//e.getx/y
     {
-      zgenerate.repaint();
-      if(e.getx())
-      //if()
+        zgenerate.repaint();
+        //if(e.getx())
     }
     public void mousePressed(MouseEvent e)//wenn Maustaste runtergedrückt wurde
     {
