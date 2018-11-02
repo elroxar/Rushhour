@@ -7,7 +7,6 @@ public class Spielbrett
     /* Attribute */
     private boolean[][] zSpielbrett;
     private int[][][] zSpielbrettKoord;
-    private Fahrzeug[] zFahrzeuge;
     private LevelVerwaltung zLV;
     
     /* Methoden */
@@ -15,6 +14,7 @@ public class Spielbrett
         zSpielbrett = new boolean[6][6];
         zSpielbrettKoord = new int [6][6][2];
         zLV = new LevelVerwaltung();
+        
         fuelleSpielbrettKoord();
     }
     /**
@@ -39,45 +39,52 @@ public class Spielbrett
 	/**
 	 * @param pLevel Nummer des zu ladenden Levels
 	 */
-	private void ladeLevel(int pLevel){
+	public Fahrzeug[] ladeLevel(int pLevel){
+		System.out.println("\nLevel: " + (pLevel + 1) + ", Index: " + pLevel);
         String[] lLevel = zLV.gibLevel(pLevel);
-        //zFahrzeuge = new Fahrzeug[lLevel.length];
-		zFahrzeuge = new Fahrzeug[4];
-        for(int i = 0; i<zFahrzeuge.length; i++){
+        for(String i : lLevel)
+        	System.out.println(i);
+        Fahrzeug[] lFahrzeuge = new Fahrzeug[lLevel.length];
+        System.out.println("In diesem Level existieren " + lFahrzeuge.length + " Fahrzeuge.");
+        for(int i = 0; i<lFahrzeuge.length; i++){
             int lX1, lY1, lX2, lY2, lX3, lY3;
             switch(lLevel[i].charAt(0)){
                 case 'P':
-                    lX1 = lLevel[i].charAt(2);
-                    lY1 = lLevel[i].charAt(3);
-                    lX2 = lLevel[i].charAt(5);
-                    lY2 = lLevel[i].charAt(6);
-                    zFahrzeuge[i] = new PKW(lX1, lY1, lX2, lY2, false);
+                	System.out.println("Dieses Objekt ist ein PKW.");
+                    lX1 = Integer.parseInt("" + lLevel[i].charAt(2));
+                    lY1 = Integer.parseInt("" + lLevel[i].charAt(3));
+                    lX2 = Integer.parseInt("" + lLevel[i].charAt(5));
+                    lY2 = Integer.parseInt(("" + lLevel[i].charAt(6)));
+                    lFahrzeuge[i] = new PKW(lX1, lY1, lX2, lY2, false);
                     this.belegeFeld(lX1, lY1);
                     this.belegeFeld(lX2, lY2);
                     break;
                 case 'L':
-                    lX1 = lLevel[i].charAt(2);
-                    lY1 = lLevel[i].charAt(3);
-                    lX2 = lLevel[i].charAt(5);
-                    lY2 = lLevel[i].charAt(6);
-                    lX3 = lLevel[i].charAt(8);
-                    lY3 = lLevel[i].charAt(9);
-                    zFahrzeuge[i] = new LKW(lX1, lY1, lX2, lY2, lX3, lY3);
+                	System.out.println("Dieses Objekt ist ein LKW.");
+	                lX1 = Integer.parseInt("" + lLevel[i].charAt(2));
+	                lY1 = Integer.parseInt("" + lLevel[i].charAt(3));
+	                lX2 = Integer.parseInt("" + lLevel[i].charAt(5));
+	                lY2 = Integer.parseInt("" + lLevel[i].charAt(6));
+                    lX3 = Integer.parseInt("" + lLevel[i].charAt(8));
+                    lY3 = Integer.parseInt("" + lLevel[i].charAt(9));
+                    lFahrzeuge[i] = new LKW(lX1, lY1, lX2, lY2, lX3, lY3);
                     this.belegeFeld(lX1, lY1);
                     this.belegeFeld(lX2, lY2);
                     this.belegeFeld(lX3, lY3);
                     break;
                 default:
-					lX1 = lLevel[i].charAt(0);
-                    lY1 = lLevel[i].charAt(1);
-                    lX2 = lLevel[i].charAt(3);
-                    lY2 = lLevel[i].charAt(4);
-                    zFahrzeuge[i] = new PKW(lX1, lY1, lX2, lY2, true);
+                	System.out.println("Dieses Objekt ist ein rotes Auto.");
+	                lX1 = Integer.parseInt("" + lLevel[i].charAt(0));
+	                lY1 = Integer.parseInt("" + lLevel[i].charAt(1));
+	                lX2 = Integer.parseInt("" + lLevel[i].charAt(3));
+	                lY2 = Integer.parseInt("" + lLevel[i].charAt(4));
+                    lFahrzeuge[i] = new PKW(lX1, lY1, lX2, lY2, true);
                     this.belegeFeld(lX1, lY1);
                     this.belegeFeld(lX2, lY2);
                     break;
             }
         }
+        return lFahrzeuge;
     }
     /**
 	 * @param pX x-Koordinate des zu belegenden Feldes
@@ -93,13 +100,5 @@ public class Spielbrett
      */
     public boolean istBelegt(int pX, int pY){
         return zSpielbrett[pX][pY];
-    }
-	/**
-	 * @param pLevel reales Level (Position im Array + 1)
-	 * @return liefert die Fahrzeugobjekte des aktuellen Levels
-	 */
-	public Fahrzeug[] gibLevel(int pLevel){
-		this.ladeLevel(pLevel - 1);
-    	return zFahrzeuge;
     }
 }//Ende Klasse: Spielbrett
