@@ -1,25 +1,18 @@
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
-<<<<<<< Updated upstream
 //Autor Louis,Ben
 /**
 *
 */
-public class Main extends JFrame implements MouseListener
-{
+public class Main extends JFrame implements MouseListener {
 	/* Attribute */
   	private JLabel zZuege;
     private Draw zgenerate;
-=== private JMenuBar MenueLeiste;
-    private JMenu Levelauswahl;
+    private JMenuBar MenueLeiste;
+    private JMenu zLevelauswahl;
     private JMenuItem Level;
     private Fahrzeug[] zFahrzeuge;
-public class Main extends JFrame {
-    /* Attribute */
-    private Draw zgenerate;
->>>>>>>
-    Stashed changes
 
     /* Methoden */
     public Main() {
@@ -38,35 +31,27 @@ public class Main extends JFrame {
         MenueLeiste = new JMenuBar();
         set JMenuBar(MenueLeiste);
         Levelauswahl = new JMenu("LevelAuswahl");
-
         for (int i = 1; i < 40; i++)
         {
-            Levelauswahl.add(new Level("Level"+i));
+            //zLevelauswahl.add(new Level("Level"+i));
         }
     }
-
     public void update(){} //ist die mouseClicked Methode
-
-
-
     public void mouseClicked(MouseEvent e)//wenn Maus geklickt wurde//Feldabfrage//e.getx/y
     {
       zgenerate.repaint();
       if(e.getx())
+      //if()
     }
-
     public void mousePressed(MouseEvent e)//wenn Maustaste runtergedrückt wurde
     {
     }
-
     public void mouseReleased(MouseEvent e)//wenn Taste wieder losgelassen wurde
     {
     }
-
     public void mouseEntered(MouseEvent e)//Maus in der Komponente
     {
     }
-
     public void mouseExited(MouseEvent e)//Maus aus Komponente verschwunden
     {
     }
