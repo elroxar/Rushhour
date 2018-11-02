@@ -18,26 +18,30 @@ public class LevelVerwaltung {
 	/**
 	 *
 	 */
-	private void liesLevelEin(){
+	private String[][] liesLevelEin(){
+		String[][] lLevel = new String[4][];
         try {
             fr = new FileReader("data/level.csv");
             br = new BufferedReader(fr);
-            int i = 1;
-            while(br.ready()) {
+            int i = 0;
+            while(br.ready()){
                 String lLine = br.readLine();
-                int lFahrzeugAnzahl = lLine.charAt(0);
+                int lFahrzeugAnzahl = Integer.parseInt("" + lLine.charAt(0));
                 lLine = lLine.substring(2);
-                zLevel[i-1] = new String[lFahrzeugAnzahl];
-                zLevel[i-1] = lLine.split(";");
+                lLevel[i] = new String[lFahrzeugAnzahl];
+                lLevel[i] = lLine.split(";");
+                i++;
             }
         }catch(Exception e){System.out.println("Fehler beim Einlesen der Datei");}
+		return lLevel;
     }
 	/**
 	 * @param pLevel
-	 * @return
+	 * @return liefert die Rohdaten zum angegebenen Level (Position im Array)
 	 */
 	public String[] gibLevel(int pLevel){
-        this.liesLevelEin();
-    	return this.zLevel[pLevel];
+        //zLevel = this.liesLevelEin();
+    	//return this.zLevel[pLevel];
+		return this.liesLevelEin()[pLevel];
     }
 }//Ende Klasse: LevelVerwaltung
