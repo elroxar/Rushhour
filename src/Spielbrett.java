@@ -40,17 +40,14 @@ public class Spielbrett
 	 * @param pLevel Nummer des zu ladenden Levels
 	 */
 	public Fahrzeug[] ladeLevel(int pLevel){
-		System.out.println("\nLevel: " + (pLevel + 1) + ", Index: " + pLevel);
+		//System.out.println("\nLevel: " + (pLevel + 1) + ", Index: " + pLevel); //DEBUG
         String[] lLevel = zLV.gibLevel(pLevel);
-        for(String i : lLevel)
-        	System.out.println(i);
         Fahrzeug[] lFahrzeuge = new Fahrzeug[lLevel.length];
-        System.out.println("In diesem Level existieren " + lFahrzeuge.length + " Fahrzeuge.");
         for(int i = 0; i<lFahrzeuge.length; i++){
             int lX1, lY1, lX2, lY2, lX3, lY3;
             switch(lLevel[i].charAt(0)){
                 case 'P':
-                	System.out.println("Dieses Objekt ist ein PKW.");
+                	//System.out.println("Dieses Objekt ist ein PKW."); //DEBUG
                     lX1 = Integer.parseInt("" + lLevel[i].charAt(2));
                     lY1 = Integer.parseInt("" + lLevel[i].charAt(3));
                     lX2 = Integer.parseInt("" + lLevel[i].charAt(5));
@@ -60,7 +57,7 @@ public class Spielbrett
                     this.belegeFeld(lX2, lY2);
                     break;
                 case 'L':
-                	System.out.println("Dieses Objekt ist ein LKW.");
+                	//System.out.println("Dieses Objekt ist ein LKW."); //DEBUG
 	                lX1 = Integer.parseInt("" + lLevel[i].charAt(2));
 	                lY1 = Integer.parseInt("" + lLevel[i].charAt(3));
 	                lX2 = Integer.parseInt("" + lLevel[i].charAt(5));
@@ -73,7 +70,7 @@ public class Spielbrett
                     this.belegeFeld(lX3, lY3);
                     break;
                 default:
-                	System.out.println("Dieses Objekt ist ein rotes Auto.");
+                	//System.out.println("Dieses Objekt ist ein rotes Auto."); //DEBUG
 	                lX1 = Integer.parseInt("" + lLevel[i].charAt(0));
 	                lY1 = Integer.parseInt("" + lLevel[i].charAt(1));
 	                lX2 = Integer.parseInt("" + lLevel[i].charAt(3));

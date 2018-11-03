@@ -8,7 +8,7 @@ public class Fahrzeug
 {
     /* Attribute */
     private int zX1, zY1, zX2, zY2;
-    private Color zFarbe;
+    Color zFarbe;
     
     /* Methoden */
     Fahrzeug(int pX1, int pY1, int pX2, int pY2){
@@ -16,10 +16,12 @@ public class Fahrzeug
         zY1 = pY1;
         zX2 = pX2;
         zY2 = pY2;
+        this.setzeFarbe();
     }
-    public void setzeFarbe()
+    private void setzeFarbe()
     {
         int lRandom = ThreadLocalRandom.current().nextInt(0, 6);
+        //System.out.println("Random Number: " + lRandom); //DEBUG
         switch(lRandom)
         {
             case 0: zFarbe = Color.CYAN;
@@ -34,7 +36,8 @@ public class Fahrzeug
             break;
             case 5: zFarbe = Color.BLUE;
             break;
-            default: zFarbe = Color.RED;
+            //default: zFarbe = Color.RED;
+            //break;
         }
     }
     /**
