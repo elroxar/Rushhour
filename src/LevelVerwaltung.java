@@ -13,10 +13,10 @@ public class LevelVerwaltung {
     
     /* Methoden */
     LevelVerwaltung(){
-        zLevel = new String[4][]; //TODO: Zurück auf 40 ändern
+        zLevel = new String[4][]; //TODO: Zurück auf 40 ändern nach Vervollständigung aller Level
     }
 	/**
-	 *
+	 * @return liefert Die Rohdaten aller Level in einem 2Dimensionalem Array
 	 */
 	private String[][] liesLevelEin(){
 		String[][] lLevel = new String[4][];
@@ -26,8 +26,17 @@ public class LevelVerwaltung {
             int i = 0;
             while(br.ready()){
                 String lLine = br.readLine();
-                int lFahrzeugAnzahl = Integer.parseInt("" + lLine.charAt(0));
-                lLine = lLine.substring(2);
+	            int lFahrzeugAnzahl;
+	            if(lLine.charAt(1) == ';') {
+		            lFahrzeugAnzahl = Integer.parseInt("" + lLine.charAt(0));
+		            //System.out.println("In Level " + (i+1) + " existieren " + lFahrzeugAnzahl + " Fahrzeuge."); //DEBUG
+		            lLine = lLine.substring(2);
+	            }
+	            else {
+		            lFahrzeugAnzahl = Integer.parseInt(lLine.substring(0, 2));
+		            //System.out.println("In Level " + (i+1) + " existieren " + lFahrzeugAnzahl + " Fahrzeuge."); //DEBUG
+		            lLine = lLine.substring(3);
+	            }
                 lLevel[i] = new String[lFahrzeugAnzahl];
                 lLevel[i] = lLine.split(";");
                 i++;
@@ -40,8 +49,6 @@ public class LevelVerwaltung {
 	 * @return liefert die Rohdaten zum angegebenen Level (Position im Array)
 	 */
 	public String[] gibLevel(int pLevel){
-        //zLevel = this.liesLevelEin();
-    	//return this.zLevel[pLevel];
 		return this.liesLevelEin()[pLevel];
     }
 }//Ende Klasse: LevelVerwaltung
