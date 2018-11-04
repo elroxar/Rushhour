@@ -33,7 +33,7 @@ public class Main extends JFrame implements MouseListener {
         setJMenuBar(MenueLeiste);
         zLevelauswahl = new JMenu("LevelAuswahl");
         MenueLeiste.add(zLevelauswahl);
-        for (int i = 1; i < 40; i++)
+        for (int i = 1; i == 40; i++)
         {
             zLevelauswahl.add(new JMenuItem("Level "+i));
 
