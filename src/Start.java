@@ -8,6 +8,6 @@ public class Start {
 	
 	/* Methoden */
 	public static void main(String[] args) {
-		new Main();
+		new StartFenster();
 	}
 }//Ende Klasse: Start//
