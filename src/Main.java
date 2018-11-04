@@ -3,16 +3,16 @@ import java.awt.event.*;
 import java.awt.*;
 //Autor Louis,Ben
 /**
-*
-*/
+ *
+ */
 public class Main extends JFrame implements MouseListener {
-	/* Attribute */
-  	private JLabel zZuege;
+    /* Attribute */
+    private JLabel zZuege;
     private Draw zgenerate;
     private JMenuBar MenueLeiste;
     private JMenu zLevelauswahl;
     private JMenuItem Level;
-    private Fahrzeug[] zFahrzeuge;
+    // private Fahrzeug[] zFahrzeuge;
 
     /* Methoden */
     public Main() {
@@ -23,24 +23,26 @@ public class Main extends JFrame implements MouseListener {
         zgenerate = new Draw();
         cp.add(zgenerate);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(1200, 800);
+        setSize((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(),(int)Toolkit.getDefaultToolkit().getScreenSize().getHeight());
         setAlwaysOnTop(true);
         setVisible(true);
         setResizable(true);
         cp.add(zZuege);
         MenueLeiste = new JMenuBar();
         //TODO: Fix
-        //set JMenuBar(MenueLeiste);
-        //Levelauswahl = new JMenu("LevelAuswahl");
-        for (int i = 1; i < 40; i++)
+        setJMenuBar(MenueLeiste);
+        zLevelauswahl = new JMenu("LevelAuswahl");
+        MenueLeiste.add(zLevelauswahl);
+        for (int i = 1; i == 40; i++)
         {
-            //zLevelauswahl.add(new Level("Level"+i));
+            zLevelauswahl.add(new JMenuItem("Level "+i));
+
         }
     }
     public void update(){} //ist die mouseClicked Methode
     public void mouseClicked(MouseEvent e)//wenn Maus geklickt wurde//Feldabfrage//e.getx/y
     {
-        zgenerate.repaint();
+        //  zgenerate.repaint();
         //if(e.getx())
     }
     public void mousePressed(MouseEvent e)//wenn Maustaste runtergedrückt wurde

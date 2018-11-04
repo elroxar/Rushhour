@@ -32,7 +32,8 @@ public class StartFenster extends JFrame implements ActionListener
     }
     public void actionPerformed(ActionEvent arg)
     {
-
+        if(arg.getSource().equals(zStart))new Main();
+        else if(arg.getSource().equals(zEinstellungen))System.exit(0);
 
     }
 
