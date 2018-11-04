@@ -23,18 +23,20 @@ public class Main extends JFrame implements MouseListener {
         zgenerate = new Draw();
         cp.add(zgenerate);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(1200, 800);
+        setSize((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(),(int)Toolkit.getDefaultToolkit().getScreenSize().getHeight());
         setAlwaysOnTop(true);
         setVisible(true);
         setResizable(true);
         cp.add(zZuege);
         MenueLeiste = new JMenuBar();
         //TODO: Fix
-        //set JMenuBar(MenueLeiste);
-        //Levelauswahl = new JMenu("LevelAuswahl");
+        setJMenuBar(MenueLeiste);
+        zLevelauswahl = new JMenu("LevelAuswahl");
+        MenueLeiste.add(zLevelauswahl);
         for (int i = 1; i < 40; i++)
         {
-            //zLevelauswahl.add(new Level("Level"+i));
+            zLevelauswahl.add(new JMenuItem("Level "+i));
+
         }
     }
     public void update(){} //ist die mouseClicked Methode
