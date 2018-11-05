@@ -9,8 +9,14 @@ public class LKW extends Fahrzeug {
     /* Methoden */
     LKW(int pX1, int pY1, int pX2, int pY2, int pX3, int pY3) {
         super(pX1, pY1, pX2, pY2);
-        zX3 = pX3;
-        zY3 = pY3;
+        if(pX3 >= 0 && pX3 <= 5)
+            zX3 = pX3;
+        else
+	        System.out.println("Dieses Auto passt nicht auf das Brett.");
+        if(pY3 >= 0 && pY3 <= 5)
+            zY3 = pY3;
+        else
+	        System.out.println("Dieses Auto passt nicht auf das Brett.");
     }
 	/**
 	 * @return liefert X3
