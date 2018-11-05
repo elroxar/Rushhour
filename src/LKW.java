@@ -6,7 +6,7 @@ public class LKW extends Fahrzeug {
     /* Attribute */
     private int zX3, zY3;
     
-    /* Methoden */
+    /* Methoden *///
     LKW(int pX1, int pY1, int pX2, int pY2, int pX3, int pY3) {
         super(pX1, pY1, pX2, pY2);
         if(pX3 >= 0 && pX3 <= 5)

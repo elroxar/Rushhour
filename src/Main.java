@@ -16,7 +16,7 @@ public class Main extends JFrame implements MouseListener {
 	private JMenu zMNgradMittel;
 	private JMenu zMNgradSchwer;
 	private JMenu zMNgradExtrem;
-    // private Fahrzeug[] zFahrzeuge;
+	private Fahrzeug [] zFahrzeuge;
 
     /* Methoden */
     public Main() {
@@ -34,7 +34,7 @@ public class Main extends JFrame implements MouseListener {
 
         
         //initialisiere zGenerate
-        zGenerate = new Draw();
+        zGenerate = new Draw(zFahrzeuge);
         cp.add(zGenerate);
 
 		//Print Spielzuege
@@ -82,7 +82,7 @@ public class Main extends JFrame implements MouseListener {
     public void mouseClicked(MouseEvent e)//wenn Maus geklickt wurde//Feldabfrage//e.getx/y
     {
         //zGenerate.repaint();
-        //if(e.getx())
+        if(e.getx())
     }
 	/**
 	 *

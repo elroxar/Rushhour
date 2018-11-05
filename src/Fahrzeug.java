@@ -6,7 +6,7 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class Fahrzeug {
     /* Attribute */
-    private int zX1, zY1, zX2, zY2;
+    protected int zX1, zY1, zX2, zY2;
     Color zFarbe;
     
     /* Methoden */

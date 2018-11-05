@@ -8,7 +8,7 @@ public class Spielbrett {
     private int[][][] zSpielbrettKoord;
     private LevelVerwaltung zLV;
     
-    /* Methoden */
+    /* Methoden *///
     Spielbrett(){
         zSpielbrett = new boolean[6][6];
         zSpielbrettKoord = new int [6][6][2];
