@@ -7,35 +7,64 @@ import java.awt.*;
  */
 public class Main extends JFrame implements MouseListener {
     /* Attribute */
-	//TODO: Variablen umbenennen nach LK-Schema
-    private JLabel zZuege;
-    private Draw zgenerate;
-    private JMenuBar MenueLeiste;
-    private JMenu zLevelauswahl;
-    private JMenuItem Level;
+
+    private JLabel zLBSpielzuege;
+    private Draw zGenerate;
+    private JMenuBar zMBMenueleiste;
+    private JMenu zMNLevelauswahl;
+    private JMenu zMNgradLeicht;
+	private JMenu zMNgradMittel;
+	private JMenu zMNgradSchwer;
     // private Fahrzeug[] zFahrzeuge;
 
     /* Methoden */
-    public Main() { //TODO: Dokumentieren
-        zZuege = new JLabel("Zug: ");
-        setLocation(250, 10);
-        Container cp = getContentPane();
-        cp.setLayout(new FlowLayout());
-        zgenerate = new Draw();
-        cp.add(zgenerate);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(),(int)Toolkit.getDefaultToolkit().getScreenSize().getHeight());
-        setAlwaysOnTop(true);
-        setVisible(true);
-        setResizable(true);
-        cp.add(zZuege);
-        MenueLeiste = new JMenuBar();
-        //TODO: Fix
-        setJMenuBar(MenueLeiste);
-        zLevelauswahl = new JMenu("LevelAuswahl");
-        MenueLeiste.add(zLevelauswahl);
+    public Main() {
+
+		//Standardeinstellungen
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setSize((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(),(int)Toolkit.getDefaultToolkit().getScreenSize().getHeight());
+		setAlwaysOnTop(true);
+		setVisible(true);
+		setResizable(true);
+
+		//Festlegen des Layouts (Flowlayout)
+		Container cp = getContentPane();
+		cp.setLayout(new FlowLayout());
+		
+        
+        //initialisiere zGenerate
+        zGenerate = new Draw();
+        cp.add(zGenerate);
+
+		//Print Spielzuege
+		zLBSpielzuege = new JLabel("Zug: ");
+		cp.add(zLBSpielzuege);
+
+        //Erstelle Menueleiste
+        zMBMenueleiste = new JMenuBar();
+		setJMenuBar(zMBMenueleiste);
+
+		//Initialisieren der Menueleisten Gegenstaende
+		zMNLevelauswahl = new JMenu("LevelAuswahl");
+        zMNgradLeicht = new JMenu("Leichte Level");
+		zMNgradMittel = new JMenu("Normale Level");
+		zMNgradSchwer = new JMenu("Schwere Level");
+
+		//Gegenstaende zur Menueleiste hinzufuegen
+		zMBMenueleiste.add(zMNLevelauswahl);
+		zMNLevelauswahl.add(zMNgradLeicht);
+		zMNLevelauswahl.add(zMNgradMittel);
+		zMNLevelauswahl.add(zMNgradSchwer);
+
+		//Level nach Schwierigkeitsgrd sortieren
         for (int i = 1; i <= 40; i++)
-            zLevelauswahl.add(new JMenuItem("Level " + i));
+			if (i <= 10) {
+				zMNgradLeicht.add(new JMenuItem("Level " + i)); //Hinzufuegen des levels
+			} else if (i <= 25) {
+				zMNgradMittel.add(new JMenuItem("Level " + i)); //Hinzufuegen des levels
+			} else if (i <= 40) {
+				zMNgradSchwer.add(new JMenuItem("Level " + i)); //Hinzufuegen des levels
+			}
     }
     /**
      *
@@ -47,7 +76,7 @@ public class Main extends JFrame implements MouseListener {
      */
     public void mouseClicked(MouseEvent e)//wenn Maus geklickt wurde//Feldabfrage//e.getx/y
     {
-        //zgenerate.repaint();
+        //zGenerate.repaint();
         //if(e.getx())
     }
 	/**
