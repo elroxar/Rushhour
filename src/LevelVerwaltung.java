@@ -27,14 +27,14 @@ public class LevelVerwaltung {
                 String lLine = br.readLine();
 	            int lFahrzeugAnzahl;
 	            if(lLine.charAt(1) == ';') {
-		            lFahrzeugAnzahl = Integer.parseInt("" + lLine.charAt(0));
+		            lFahrzeugAnzahl = Integer.parseInt("" + lLine.charAt(0)); //Liest anzahl der Fahrzeuge in diesem Level
 		            //System.out.println("In Level " + (i+1) + " existieren " + lFahrzeugAnzahl + " Fahrzeuge."); //DEBUG
-		            lLine = lLine.substring(2);
+		            lLine = lLine.substring(2); //Fahrzeugeanzahl wird aus String entfernt
 	            }
 	            else {
-		            lFahrzeugAnzahl = Integer.parseInt(lLine.substring(0, 2));
+		            lFahrzeugAnzahl = Integer.parseInt(lLine.substring(0, 2)); //Liest Anzahl der Fahrzeuge in diesem Level
 		            //System.out.println("In Level " + (i+1) + " existieren " + lFahrzeugAnzahl + " Fahrzeuge."); //DEBUG
-		            lLine = lLine.substring(3);
+		            lLine = lLine.substring(3); //Fahrzeuganzahl wird aus String entfernt
 	            }
                 lLevel[i] = new String[lFahrzeugAnzahl];
                 lLevel[i] = lLine.split(";");
