@@ -15,6 +15,7 @@ public class Main extends JFrame implements MouseListener {
     private JMenu zMNgradLeicht;
 	private JMenu zMNgradMittel;
 	private JMenu zMNgradSchwer;
+	private JMenu zMNgradExtrem;
     // private Fahrzeug[] zFahrzeuge;
 
     /* Methoden */
@@ -30,7 +31,7 @@ public class Main extends JFrame implements MouseListener {
 		//Festlegen des Layouts (Flowlayout)
 		Container cp = getContentPane();
 		cp.setLayout(new FlowLayout());
-		
+
         
         //initialisiere zGenerate
         zGenerate = new Draw();
@@ -49,21 +50,25 @@ public class Main extends JFrame implements MouseListener {
         zMNgradLeicht = new JMenu("Leichte Level");
 		zMNgradMittel = new JMenu("Normale Level");
 		zMNgradSchwer = new JMenu("Schwere Level");
+		zMNgradExtrem = new JMenu("Extreme Level");
 
 		//Gegenstaende zur Menueleiste hinzufuegen
 		zMBMenueleiste.add(zMNLevelauswahl);
 		zMNLevelauswahl.add(zMNgradLeicht);
 		zMNLevelauswahl.add(zMNgradMittel);
 		zMNLevelauswahl.add(zMNgradSchwer);
+		zMNLevelauswahl.add(zMNgradExtrem);
 
 		//Level nach Schwierigkeitsgrd sortieren
         for (int i = 1; i <= 40; i++)
 			if (i <= 10) {
 				zMNgradLeicht.add(new JMenuItem("Level " + i)); //Hinzufuegen des levels
-			} else if (i <= 25) {
+			} else if (i <= 20) {
 				zMNgradMittel.add(new JMenuItem("Level " + i)); //Hinzufuegen des levels
-			} else if (i <= 40) {
+			} else if (i <= 30) {
 				zMNgradSchwer.add(new JMenuItem("Level " + i)); //Hinzufuegen des levels
+			} else if (i <= 40) {
+				zMNgradExtrem.add(new JMenuItem("Level " + i)); //Hinzufuegen des levels
 			}
     }
     /**
