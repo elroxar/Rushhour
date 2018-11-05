@@ -11,10 +11,22 @@ public class Fahrzeug {
     
     /* Methoden */
     Fahrzeug(int pX1, int pY1, int pX2, int pY2){
-        zX1 = pX1;
-        zY1 = pY1;
-        zX2 = pX2;
-        zY2 = pY2;
+		if(pX1 >=0 && pX1 <= 5)
+            zX1 = pX1;
+		else
+			System.out.println("Dieses Auto passt nicht auf das Brett.");
+		if(pY1 >=0 && pY1 <= 5)
+            zY1 = pY1;
+		else
+			System.out.println("Dieses Auto passt nicht auf das Brett.");
+	    if(pX2 >=0 && pX2 <= 5)
+            zX2 = pX2;
+	    else
+		    System.out.println("Dieses Auto passt nicht auf das Brett.");
+	    if(pY2 >=0 && pY2 <= 5)
+            zY2 = pY2;
+	    else
+		    System.out.println("Dieses Auto passt nicht auf das Brett.");
         this.setzeFarbe();
     }
 	/**
