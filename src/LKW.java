@@ -3,7 +3,6 @@
  * @version 30/10/18
  */
 public class LKW extends Fahrzeug {
-    
     /* Attribute */
     private int zX3, zY3;
     
@@ -13,10 +12,16 @@ public class LKW extends Fahrzeug {
         zX3 = pX3;
         zY3 = pY3;
     }
-    public int gibX3(){
+	/**
+	 * @return liefert X3
+	 */
+	public int gibX3(){
         return this.zX3;
     }
-    public int gibY3(){
+	/**
+	 * @return liefert Y3
+	 */
+	public int gibY3(){
         return this.zY3;
     }
 }//Ende Klasse: LKW

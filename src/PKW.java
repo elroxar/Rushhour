@@ -1,11 +1,9 @@
 import java.awt.*;
-
 /**
  * @author theo
  * @version 30/10/18
  */
 public class PKW extends Fahrzeug {
-    
     /* Attribute*/
     private boolean zIstRotesAuto;
     

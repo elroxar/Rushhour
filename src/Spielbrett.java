@@ -2,8 +2,7 @@
  * @author theo
  * @version 30/10/18
  */
-public class Spielbrett
-{
+public class Spielbrett {
     /* Attribute */
     private boolean[][] zSpielbrett;
     private int[][][] zSpielbrettKoord;
@@ -14,11 +13,10 @@ public class Spielbrett
         zSpielbrett = new boolean[6][6];
         zSpielbrettKoord = new int [6][6][2];
         zLV = new LevelVerwaltung();
-        
         fuelleSpielbrettKoord();
     }
     /**
-     *
+     * //TODO: Dokumentieren
      */
     public void fuelleSpielbrettKoord() {
         int zMarginX = 175,zMarginY = 175;
@@ -37,7 +35,8 @@ public class Spielbrett
         }
     }
 	/**
-	 * @param pLevel Nummer des zu ladenden Levels
+	 * @param pLevel Arrayposition des zu ladenden Levels (Levelnummer - 1)
+	 * @return liefert einen Array mit allen Fahrzeugen des angegebenen Levels
 	 */
 	public Fahrzeug[] ladeLevel(int pLevel){
 		//System.out.println("\nLevel: " + (pLevel + 1) + ", Index: " + pLevel); //DEBUG

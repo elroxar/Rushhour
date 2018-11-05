@@ -1,12 +1,13 @@
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
-//Autor Louis,Ben
 /**
- *
+ * @author louis, ben
+ * @version 05/11/2018
  */
 public class Main extends JFrame implements MouseListener {
     /* Attribute */
+	//TODO: Variablen umbenennen nach LK-Schema
     private JLabel zZuege;
     private Draw zgenerate;
     private JMenuBar MenueLeiste;
@@ -15,7 +16,7 @@ public class Main extends JFrame implements MouseListener {
     // private Fahrzeug[] zFahrzeuge;
 
     /* Methoden */
-    public Main() {
+    public Main() { //TODO: Dokumentieren
         zZuege = new JLabel("Zug: ");
         setLocation(250, 10);
         Container cp = getContentPane();
@@ -33,28 +34,48 @@ public class Main extends JFrame implements MouseListener {
         setJMenuBar(MenueLeiste);
         zLevelauswahl = new JMenu("LevelAuswahl");
         MenueLeiste.add(zLevelauswahl);
-        for (int i = 1; i == 40; i++)
-        {
-            zLevelauswahl.add(new JMenuItem("Level "+i));
-
-        }
+        for (int i = 1; i <= 40; i++)
+            zLevelauswahl.add(new JMenuItem("Level " + i));
     }
+    /**
+     *
+     */
     public void update(){} //ist die mouseClicked Methode
+    /**
+     *
+     * @param e MouseEvent Object
+     */
     public void mouseClicked(MouseEvent e)//wenn Maus geklickt wurde//Feldabfrage//e.getx/y
     {
-        //  zgenerate.repaint();
+        //zgenerate.repaint();
         //if(e.getx())
     }
-    public void mousePressed(MouseEvent e)//wenn Maustaste runtergedrückt wurde
+	/**
+	 *
+	 * @param e MouseEvent Object
+	 */
+	public void mousePressed(MouseEvent e)//wenn Maustaste runtergedrückt wurde
     {
     }
-    public void mouseReleased(MouseEvent e)//wenn Taste wieder losgelassen wurde
+	/**
+	 *
+	 * @param e MouseEvent Object
+	 */
+	public void mouseReleased(MouseEvent e)//wenn Taste wieder losgelassen wurde
     {
     }
-    public void mouseEntered(MouseEvent e)//Maus in der Komponente
+	/**
+	 *
+	 * @param e MouseEvent Object
+	 */
+	public void mouseEntered(MouseEvent e)//Maus in der Komponente
     {
     }
-    public void mouseExited(MouseEvent e)//Maus aus Komponente verschwunden
+	/**
+	 *
+	 * @param e MouseEvent Object
+	 */
+	public void mouseExited(MouseEvent e)//Maus aus Komponente verschwunden
     {
     }
 }

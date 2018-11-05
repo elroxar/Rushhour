@@ -5,7 +5,6 @@ import java.io.FileReader;
  * @version 30/10/18
  */
 public class LevelVerwaltung {
-	
     /* Attribute */
     private String[][] zLevel;
     private FileReader fr;
@@ -45,7 +44,7 @@ public class LevelVerwaltung {
 		return lLevel;
     }
 	/**
-	 * @param pLevel
+	 * @param pLevel Arrayposition des zu ladenden Levels (Levelnummer - 1)
 	 * @return liefert die Rohdaten zum angegebenen Level (Position im Array)
 	 */
 	public String[] gibLevel(int pLevel){
