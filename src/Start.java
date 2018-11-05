@@ -3,7 +3,6 @@
  * @version 30/10/18
  */
 public class Start {
-	
 	/* Attribute */
 	
 	/* Methoden */

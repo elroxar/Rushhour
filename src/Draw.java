@@ -2,18 +2,24 @@ import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Toolkit;
-//autor Louis,Ben
+/**
+ * @author ben, louis
+ * @version 05/11/2018
+ */
 public class Draw extends Canvas {
-
+	/* Attribute */
 	final int breite = 95;
 
+	/* Methoden */
 	public Draw()
 	{
 
 		setSize(800,800);
 
 	}
-
+	/**
+	 * @param arg Graphics Object
+	 */
 	@Override
 	public void paint(Graphics arg) {
 		// Vierecke 95,95 Platz zwischen feldern 16///

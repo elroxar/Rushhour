@@ -4,8 +4,7 @@ import java.util.concurrent.ThreadLocalRandom;
  * @author theo
  * @version 30/10/18
  */
-public class Fahrzeug
-{
+public class Fahrzeug {
     /* Attribute */
     private int zX1, zY1, zX2, zY2;
     Color zFarbe;
@@ -18,7 +17,10 @@ public class Fahrzeug
         zY2 = pY2;
         this.setzeFarbe();
     }
-    private void setzeFarbe()
+	/**
+	 * Zufälliges setzen der Farbe
+	 */
+	private void setzeFarbe()
     {
         int lRandom = ThreadLocalRandom.current().nextInt(0, 6);
         //System.out.println("Random Number: " + lRandom); //DEBUG

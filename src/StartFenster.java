@@ -1,7 +1,10 @@
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
-//Autor Ben
+/**
+ * @author ben
+ * @version 05/11/2018
+ */
 public class StartFenster extends JFrame implements ActionListener
 {
     private JButton zStart,zEinstellungen;
