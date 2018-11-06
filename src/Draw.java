@@ -43,7 +43,7 @@ public class Draw extends Canvas {
 					arg1.fillRect(75 + (breite + 16) * zFahrzeuge[i].gibX2(), 75 + (breite + 16) * zFahrzeuge[i].gibY2(), breite, breite);
 					arg1.fillRect(75 + (breite + 16) * ((LKW)zFahrzeuge[i]).gibX3(), 75 + (breite + 16) * ((LKW)zFahrzeuge[i]).gibY3() - 16, breite, breite);
 				}
-			}/*
+			}
 			else {
 				if(zFahrzeuge[i] instanceof PKW)//PKW?
 				{
@@ -56,7 +56,7 @@ public class Draw extends Canvas {
 					arg1.fillRect(75 + (breite + 16) * zFahrzeuge[i].gibX2(), 75 + (breite + 16) * zFahrzeuge[i].gibY2(), breite, breite);
 					arg1.fillRect(75 + (breite + 16) * ((LKW)zFahrzeuge[i]).gibX3(), 75 + (breite + 16) * ((LKW)zFahrzeuge[i]).gibY3() - 16, breite, breite);
 				}
-			}*/
+			}
 		}
 	}
 }
