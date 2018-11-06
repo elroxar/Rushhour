@@ -1,5 +1,5 @@
 /**
- * @author theo
+ * @author tom, theo
  * @version 30/10/18
  */
 public class LKW extends Fahrzeug {
