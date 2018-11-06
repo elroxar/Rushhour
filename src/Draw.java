@@ -35,31 +35,25 @@ public class Draw extends Canvas {
 		for(int i = 0; i < pFahrzeuge.length; i++) {
 			if(pFahrzeuge[i].istVertikal())//vertikal?
 			{
-				if(pFahrzeuge[i] instanceof PKW)//PKW?
-				{
-					arg1.fillRect(75 + (breite + 16) * pFahrzeuge[i].gibX1(), 75 + (breite + 16) * pFahrzeuge[i].gibY1(), breite, breite + 16);
-					arg1.fillRect(75 + (breite + 16) * pFahrzeuge[i].gibX2(), 75 + (breite + 16) * pFahrzeuge[i].gibY2() - 16, breite, breite);
-					
-				}
-				else {
-					arg1.fillRect(75 + (breite + 16) * pFahrzeuge[i].gibX1(), 75 + (breite + 16) * pFahrzeuge[i].gibY1(), breite, breite + 16);
-					arg1.fillRect(75 + (breite + 16) * pFahrzeuge[i].gibX2(), 75 + (breite + 16) * pFahrzeuge[i].gibY2(), breite, breite);
-					arg1.fillRect(75 + (breite + 16) * ((LKW)pFahrzeuge[i]).gibX3(), 75 + (breite + 16) * ((LKW)pFahrzeuge[i]).gibY3() - 16, breite, breite);
-				}
+				zeichne(arg1, i, breite, breite + 16);
 			}
 			else {
-				if(pFahrzeuge[i] instanceof PKW)//PKW?
-				{
-					arg1.fillRect(75 + (breite + 16) * pFahrzeuge[i].gibX1(), 75 + (breite + 16) * pFahrzeuge[i].gibY1(), breite + 16, breite);
-					arg1.fillRect(75 + (breite + 16) * pFahrzeuge[i].gibX2(), 75 + (breite + 16) * pFahrzeuge[i].gibY2() - 16, breite, breite);
-					
-				}
-				else {
-					arg1.fillRect(75 + (breite + 16) * pFahrzeuge[i].gibX1(), 75 + (breite + 16) * pFahrzeuge[i].gibY1(), breite + 16, breite);
-					arg1.fillRect(75 + (breite + 16) * pFahrzeuge[i].gibX2(), 75 + (breite + 16) * pFahrzeuge[i].gibY2(), breite, breite);
-					arg1.fillRect(75 + (breite + 16) * ((LKW)pFahrzeuge[i]).gibX3(), 75 + (breite + 16) * ((LKW)pFahrzeuge[i]).gibY3() - 16, breite, breite);
-				}
+				zeichne(arg1, i, breite + 16, breite);
 			}
+		}
+	}
+	
+	private void zeichne(Graphics arg1, int i, int breite, int i2) {
+		if(zFahrzeuge[i] instanceof PKW)//PKW?
+		{
+			arg1.fillRect(75 + (breite + 16) * zFahrzeuge[i].gibX1(), 75 + (breite + 16) * zFahrzeuge[i].gibY1(), breite, i2);
+			arg1.fillRect(75 + (breite + 16) * zFahrzeuge[i].gibX2(), 75 + (breite + 16) * zFahrzeuge[i].gibY2() - 16, breite, breite);
+			
+		}
+		else {
+			arg1.fillRect(75 + (breite + 16) * zFahrzeuge[i].gibX1(), 75 + (breite + 16) * zFahrzeuge[i].gibY1(), breite, i2);
+			arg1.fillRect(75 + (breite + 16) * zFahrzeuge[i].gibX2(), 75 + (breite + 16) * zFahrzeuge[i].gibY2(), breite, breite);
+			arg1.fillRect(75 + (breite + 16) * ((LKW)zFahrzeuge[i]).gibX3(), 75 + (breite + 16) * ((LKW)zFahrzeuge[i]).gibY3() - 16, breite, breite);
 		}
 	}
 }
