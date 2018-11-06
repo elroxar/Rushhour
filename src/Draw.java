@@ -7,13 +7,17 @@ public class Draw extends Canvas {
 	Canvas zCanvas = new Canvas();
 	private Fahrzeug[] zFahrzeuge;
 	final int breite = 95;
-	private Spielbrett zSpielbrett;
+	private Spielbrett zSpielbrett = new Spielbrett();
 	public Draw() {
 		setSize(800, 800);
-		zSpielbrett = new Spielbrett();
+
 		//zFahrzeuge = zSpielbrett.ladeLevel();
 		//drawFahrzeuge(zFahrzeuge);
 	}
+
+	public void zeichneAufSpielbrett (int pLevelNummer) {
+	    drawFahrzeuge(zSpielbrett.ladeLevel(pLevelNummer - 1));
+    }
 	
 	@Override
 	public void paint(Graphics arg) {
