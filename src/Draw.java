@@ -6,10 +6,12 @@ import java.awt.Toolkit;
 public class Draw extends Canvas {
 	private Fahrzeug[] zFahrzeuge;
 	final int breite = 95;
+	private Spielbrett zSpielbrett;
 	
-	public Draw(Fahrzeug[] pFahrzeuge) {
+	public Draw() {
 		setSize(800, 800);
-		zFahrzeuge = pFahrzeuge;
+		zSpielbrett = new Spielbrett();
+		//zFahrzeuge = zSpielbrett.ladeLevel();
 	}
 	
 	@Override
@@ -29,9 +31,9 @@ public class Draw extends Canvas {
 	}
 	
 	//generiere Fahrzeuge ABER noch ohne verschiebeMethode
-	public void drawFahrzeuge(Graphics arg1) {
-		for(int i = 0; i < zFahrzeuge.length; i++) {
-			if(zFahrzeuge[i].istVertikal())//vertikal?
+	public void drawFahrzeuge(Graphics arg1, Fahrzeug[] pFahrzeuge) {
+		for(int i = 0; i < pFahrzeuge.length; i++) {
+			if(pFahrzeuge[i].istVertikal())//vertikal?
 			{
 				zeichne(arg1, i, breite, breite + 16);
 			}
