@@ -4,14 +4,15 @@ import java.awt.Graphics;
 import java.awt.Toolkit;
 //autor Louis,Ben
 public class Draw extends Canvas {
+	Canvas zCanvas = new Canvas();
 	private Fahrzeug[] zFahrzeuge;
 	final int breite = 95;
 	private Spielbrett zSpielbrett;
-	
 	public Draw() {
 		setSize(800, 800);
 		zSpielbrett = new Spielbrett();
 		//zFahrzeuge = zSpielbrett.ladeLevel();
+		drawFahrzeuge(zFahrzeuge);
 	}
 	
 	@Override
@@ -29,9 +30,10 @@ public class Draw extends Canvas {
 		arg.clearRect(749, 297, 3, 96);
 		//drawFahrzeuge(Graphics arg1);
 	}
-	
+
 	//generiere Fahrzeuge ABER noch ohne verschiebeMethode
-	public void drawFahrzeuge(Graphics arg1, Fahrzeug[] pFahrzeuge) {
+	public void drawFahrzeuge( Fahrzeug[] pFahrzeuge) {
+		Graphics arg1 = zCanvas.getGraphics();
 		for(int i = 0; i < pFahrzeuge.length; i++) {
 			if(pFahrzeuge[i].istVertikal())//vertikal?
 			{
