@@ -82,7 +82,7 @@ public class Main extends JFrame implements MouseListener {
     public void mouseClicked(MouseEvent e)//wenn Maus geklickt wurde//Feldabfrage//e.getx/y
     {
         //zGenerate.repaint();
-        if(e.getx())
+        //if(e.getx())
     }
 	/**
 	 *

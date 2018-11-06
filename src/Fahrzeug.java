@@ -57,7 +57,7 @@ public class Fahrzeug {
     /**
      * @return liefert Ausrichtung
      */
-    private boolean istVertikal(){
+    public boolean istVertikal(){
 	    return zX1 == zX2;
     }
     /**
