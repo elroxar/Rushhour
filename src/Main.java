@@ -36,7 +36,7 @@ public class Main extends JFrame implements MouseListener {
 
         
         //initialisiere zGenerate
-        zGenerate = new Draw(zFahrzeuge);
+        zGenerate = new Draw();
         cp.add(zGenerate);
 
 		//Print Spielzuege
