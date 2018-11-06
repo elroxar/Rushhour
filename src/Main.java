@@ -28,10 +28,12 @@ public class Main extends JFrame implements MouseListener {
 		setVisible(true);
 		setResizable(true);
 
+
 		//Festlegen des Layouts (Flowlayout)
 		Container cp = getContentPane();
 		cp.setLayout(new FlowLayout());
-        cp.setBackground(Color.black);
+		cp.setBackground(Color.BLACK);
+
         
         //initialisiere zGenerate
         zGenerate = new Draw(zFahrzeuge);
