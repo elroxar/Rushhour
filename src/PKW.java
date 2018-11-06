@@ -1,7 +1,7 @@
 import java.awt.*;
 import java.awt.Graphics;
 /**
- * @author theo
+ * @author tom, theo
  * @version 30/10/18
  */
 public class PKW extends Fahrzeug {
