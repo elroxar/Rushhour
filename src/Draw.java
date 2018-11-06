@@ -15,9 +15,10 @@ public class Draw extends Canvas {
 	@Override
 	public void paint(Graphics arg) {
 		// Vierecke 95,95 Platz zwischen feldern 16///
+		setBackground(Color.red);
 		setLocation((getParent().getWidth() / 2) - (getWidth() / 2), (getParent().getHeight() / 2) - (getHeight() / 2));//getParent() = uebergeordneter Container
 		arg.fillRect(0, 0, getWidth(), getHeight());
-		arg.setColor(Color.black);
+		arg.setColor(Color.white);
 		arg.drawRect(50, 50, 700, 700);
 		
 		for(int x = 0; x < 6; x++)
