@@ -12,7 +12,7 @@ public class Draw extends Canvas {
 		setSize(800, 800);
 
 		//zFahrzeuge = zSpielbrett.ladeLevel();
-		drawFahrzeuge(zFahrzeuge);
+		//drawFahrzeuge(zFahrzeuge);
 	}
 
 	public void zeichneAufSpielbrett (int pLevelNummer) {
@@ -22,10 +22,10 @@ public class Draw extends Canvas {
 	@Override
 	public void paint(Graphics arg) {
 		// Vierecke 95,95 Platz zwischen feldern 16///
-		setBackground(Color.red);
+		setBackground(Color.RED);
 		setLocation((getParent().getWidth() / 2) - (getWidth() / 2), (getParent().getHeight() / 2) - (getHeight() / 2));//getParent() = uebergeordneter Container
 		arg.fillRect(0, 0, getWidth(), getHeight());
-		arg.setColor(Color.white);
+		arg.setColor(Color.WHITE);
 		arg.drawRect(50, 50, 700, 700);
 		
 		for(int x = 0; x < 6; x++)
