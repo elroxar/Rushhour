@@ -6,8 +6,7 @@ import java.awt.*;
  * @version 05/11/2018
  */
 public class Main extends JFrame implements MouseListener {
-    /* Attribute */
-
+	/* Attribute */
     private JLabel zLBSpielzuege;
     private Draw zGenerate;
     private JMenuBar zMBMenueleiste;
@@ -69,21 +68,20 @@ public class Main extends JFrame implements MouseListener {
 		JMenuItem lLevel = new JMenuItem();
 		for (int i = 0; i < 40; i++) {
 
-			lLevel = new JMenuItem(("Level " + i));
-			lI = i;
+			lLevel = new JMenuItem("Level " + (i + 1));
 			lLevel.addActionListener((ActionEvent ev) -> {
 				JMenuItem obj = (JMenuItem)ev.getSource();
 				String id = obj.getText().split(" ")[1];
 				zSpielbrett.ladeLevel(Integer.parseInt(id));
 			});
 			zLevel[i] = lLevel;
-			if (i <= 10) {
+			if (i <= 9) {
 				zMNgradLeicht.add(zLevel[i]); //Hinzufuegen des levels
-			} else if (i <= 20) {
+			} else if (i <= 19) {
 				zMNgradMittel.add(zLevel[i]); //Hinzufuegen des levels
-			} else if (i <= 30) {
+			} else if (i <= 29) {
 				zMNgradSchwer.add(zLevel[i]); //Hinzufuegen des levels
-			} else if (i <= 40) {
+			} else if (i <= 39) {
 				zMNgradExtrem.add(zLevel[i]); //Hinzufuegen des levels
 			}
 
