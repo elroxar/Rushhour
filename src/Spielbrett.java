@@ -56,6 +56,7 @@ public class Spielbrett {
                     this.belegeFeld(lX2, lY2);
                     break;
                 case 'L':
+
                 	//System.out.println("Dieses Objekt ist ein LKW."); //DEBUG
 	                lX1 = Integer.parseInt("" + lLevel[i].charAt(2));
 	                lY1 = Integer.parseInt("" + lLevel[i].charAt(3));
