@@ -1,5 +1,5 @@
 /**
- * @author theo
+ * @author theo,louis
  * @version 30/10/18
  */
 public class Spielbrett {
