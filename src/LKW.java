@@ -30,4 +30,8 @@ public class LKW extends Fahrzeug {
 	public int gibY3(){
         return this.zY3;
     }
+
+	public char wasBinIch(){
+		return 'L';
+	}
 }//Ende Klasse: LKW

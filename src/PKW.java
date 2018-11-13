@@ -21,5 +21,8 @@ public class PKW extends Fahrzeug {
 	public boolean istRotesAuto(){
 		return this.zIstRotesAuto;
 	}
+	public char wasBinIch(){
+	    return 'P';
+    }
 	
 }//Ende Klasse: PKW
