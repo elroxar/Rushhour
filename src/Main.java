@@ -91,15 +91,72 @@ public class Main extends JFrame implements MouseListener {
      *
      */
     public void update(){} //ist die mouseClicked Methode
-    /**
-     *
-     * @param e MouseEvent Object
-     */
+  
+    private boolean stoesstZusammen(int pX, int pY, char pDir) {
+        boolean lErfolg = true;
+        int lPosX, lPosY;
+        switch(pDir) {
+        	
+	        case 'o':
+		        lPosX = pX;
+		        lPosY = pY - 1;
+		        break;
+	        case 'r':
+		        lPosX = pX + 1;
+		        lPosY = pY;
+		        break;
+	        case 'u':
+		        lPosX = pX;
+		        lPosY = pY + 1;
+		        break;
+	        case 'l':
+		        lPosX = pX - 1;
+		        lPosY = pY;
+		        break;
+	        default:
+	        	lPosX = 0;
+	        	lPosY = 0;
+        }
+        for(Fahrzeug i : zFahrzeuge)
+        	if((i.gibX1() == lPosX && i.gibY1() == lPosY) || (i.gibX2() == lPosX && i.gibY2() == lPosY))
+        		lErfolg = false;
+        	else if(i instanceof LKW) lErfolg = ((LKW)i).gibX3() != lPosX && ((LKW)i).gibY3() != lPosY;
+        return lErfolg;
+    }
+    
+	/**
+	 *
+	 * @param e MouseEvent Object
+	 */
     public void mouseClicked(MouseEvent e)//wenn Maus geklickt wurde//Feldabfrage//e.getx/y
     {
+    	int lPosX = findeFeld(e.getX());
+	    int lPosY = findeFeld(e.getY());
+    	if(! zSpielbrett.istBelegt(lPosX, lPosY)){
+    	    for(Fahrzeug i: zFahrzeuge) {
+		        if(i instanceof LKW) {
+			        if(i.gibX1() == lPosX && i.gibY1() == lPosY) i.fahreVor();
+			        else if(((LKW) i).gibX3() == lPosX && ((LKW) i).gibY3() == lPosY) i.fahreZurueck();
+		        }
+		        else if(i instanceof PKW) {
+			        if(i.gibX1() == lPosX && i.gibY1() == lPosY) i.fahreVor();
+			        else if(i.gibX2() == lPosX && i.gibY2() == lPosY) i.fahreZurueck();
+		        }
+	        }
+        }
+    }
         //zGenerate.repaint();
         //if(e.getx())
-    }
+	private int findeFeld(int pPos) {
+		if(pPos >= 75 && pPos <= 170) return 0;
+		else if(pPos >= 186 && pPos <= 281) return 1;
+		else if(pPos >= 297 && pPos <= 392) return 2;
+		else if(pPos >= 408 && pPos <= 503) return 3;
+		else if(pPos >= 519 && pPos <= 614) return 4;
+		else if(pPos >= 630 && pPos <= 725) return 5;
+		return 0;
+	}
+	
 	/**
 	 *
 	 * @param e MouseEvent Object
