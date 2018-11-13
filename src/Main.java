@@ -71,8 +71,8 @@ public class Main extends JFrame implements MouseListener {
 			lLevel = new JMenuItem("Level " + (i + 1));
 			lLevel.addActionListener((ActionEvent ev) -> {
 				JMenuItem obj = (JMenuItem)ev.getSource();
-				String id = obj.getText().split(" ")[1];
-				zSpielbrett.ladeLevel(Integer.parseInt(id));
+				int id = Integer.parseInt(obj.getText().split(" ")[1]);
+				zGenerate.drawFahrzeuge(zSpielbrett.ladeLevel(id--));
 			});
 			zLevel[i] = lLevel;
 			if (i <= 9) {
