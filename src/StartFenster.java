@@ -74,3 +74,4 @@ public class StartFenster extends JFrame implements MouseListener
     public void mouseExited(MouseEvent e)//Maus aus Komponente verschwunden
     {
     }
+}
