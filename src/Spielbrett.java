@@ -39,7 +39,7 @@ public class Spielbrett {
 	 * @return liefert einen Array mit allen Fahrzeugen des angegebenen Levels
 	 */
 	public Fahrzeug[] ladeLevel(int pLevel){
-		//System.out.println("\nLevel: " + (pLevel + 1) + ", Index: " + pLevel); //DEBUG
+		System.out.println("\nLevel: " + (pLevel + 1) + ", Index: " + pLevel); //DEBUG
         String[] lLevel = zLV.gibLevel(pLevel);
         Fahrzeug[] lFahrzeuge = new Fahrzeug[lLevel.length];
         for(int i = 0; i<lFahrzeuge.length; i++){

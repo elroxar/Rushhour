@@ -7,12 +7,6 @@ public class Test {
 	
 	/* Methoden */
     public static void main(String[] args) {
-        //Main zSpiel = new Main();
-        Spielbrett zBrett = new Spielbrett();
-        int lLevel = 1;
-        do{
-	        Fahrzeug[] zFahrzeuge = zBrett.ladeLevel(lLevel -1);
-	        lLevel++;
-        }while(lLevel <= 4);
+        new StartFenster();
     }
 }
