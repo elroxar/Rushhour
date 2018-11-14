@@ -1,11 +1,11 @@
-import java.awt.Canvas;
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Toolkit;
+import java.awt.*;
+
 //autor Louis,Ben
 public class Draw extends Canvas {
 	private Canvas zCanvas = new Canvas();
+    Toolkit Tk = Toolkit.getDefaultToolkit();
 	private Fahrzeug[] zFahrzeuge;
+	Image zBild;
 	final int breite = 95;
 	private Spielbrett zSpielbrett = new Spielbrett();
 	private Graphics arg1;
@@ -41,27 +41,29 @@ public class Draw extends Canvas {
 				if(zFahrzeuge[i] instanceof PKW)
 				//PKW?
 				{
-					arg1.setColor(zFahrzeuge[i].gibFarbe());
 					if (zFahrzeuge[i].gibX1() < zFahrzeuge[i].gibX2()){
-						arg1.fillRect(75 + (breite + 16) * zFahrzeuge[i].gibX2(), 75 + (breite + 16) * zFahrzeuge[i].gibY2(), breite, 2*breite+16);
+						zBild = Tk.getImage("data/cars/PKW/90/car"+zFahrzeuge[i].gibFarbe()+".png");
+						arg1.drawImage(zBild, 75 + (breite + 16) * zFahrzeuge[i].gibX2(), 75 + (breite + 16) * zFahrzeuge[i].gibY2(),  breite,2 * breite + 16, this);//x0,y0,Breite,Hoehe
 						arg1.setColor(Color.BLACK);
 						arg1.drawRect(75 + (breite + 16) * zFahrzeuge[i].gibX2(), 75 + (breite + 16) * zFahrzeuge[i].gibY2(), breite, 2*breite+16);
 					}
 					else {
-						arg1.fillRect(75 + (breite + 16) * zFahrzeuge[i].gibX1(), 75 + (breite + 16) * zFahrzeuge[i].gibY1(), breite, 2*breite+16);
+						zBild = Tk.getImage("data/cars/PKW/90/car"+zFahrzeuge[i].gibFarbe()+".png");
+						arg1.drawImage(zBild, 75 + (breite + 16) * zFahrzeuge[i].gibX1(), 75 + (breite + 16) * zFahrzeuge[i].gibY1(),  breite,2 * breite + 16, this);//x0,y0,Breite,Hoehe
 						arg1.setColor(Color.BLACK);
 						arg1.drawRect(75 + (breite + 16) * zFahrzeuge[i].gibX1(), 75 + (breite + 16) * zFahrzeuge[i].gibY1(), breite, 2*breite+16);
 					}
 				}
 				else if(zFahrzeuge[i] instanceof LKW){
-					arg1.setColor(zFahrzeuge[i].gibFarbe());
 					if (zFahrzeuge[i].gibX1() < zFahrzeuge[i].gibX2()){
-						arg1.fillRect(75 + (breite + 16) * ((LKW)zFahrzeuge[i]).gibX3(), 75 + (breite + 16) * ((LKW)zFahrzeuge[i]).gibY3(), breite,3*breite+32);
+						zBild = Tk.getImage("data/cars/LKW/90/car1.png");
+						arg1.drawImage(zBild, 75 + (breite + 16) * ((LKW)zFahrzeuge[i]).gibX3(), 75 + (breite + 16) * ((LKW)zFahrzeuge[i]).gibY3(), breite,3*breite+32, this);//x0,y0,Breite,Hoehe
 						arg1.setColor(Color.BLACK);
 						arg1.drawRect(75 + (breite + 16) * ((LKW)zFahrzeuge[i]).gibX3(), 75 + (breite + 16) * ((LKW)zFahrzeuge[i]).gibY3(), breite,3*breite+32);
 					}
 					else {
-						arg1.fillRect(75 + (breite + 16) * zFahrzeuge[i].gibX1(), 75 + (breite + 16) * zFahrzeuge[i].gibY1(), breite, 3*breite+32);
+						zBild = Tk.getImage("data/cars/LKW/90/car1.png");
+						arg1.drawImage(zBild, 75 + (breite + 16) * zFahrzeuge[i].gibX1(), 75 + (breite + 16) * zFahrzeuge[i].gibY1(), breite, 3*breite+32, this);//x0,y0,Breite,Hoehe
 						arg1.setColor(Color.BLACK);
 						arg1.drawRect(75 + (breite + 16) * zFahrzeuge[i].gibX1(), 75 + (breite + 16) * zFahrzeuge[i].gibY1(), breite, 3*breite+32);
 					}
@@ -72,27 +74,41 @@ public class Draw extends Canvas {
 				if(zFahrzeuge[i] instanceof PKW)
 				//PKW?
 				{
-					arg1.setColor(zFahrzeuge[i].gibFarbe());
-					if (zFahrzeuge[i].gibX1() < zFahrzeuge[i].gibX2()){
-						arg1.fillRect(75 + (breite + 16) * zFahrzeuge[i].gibX1(), 75 + (breite + 16) * zFahrzeuge[i].gibY1(), 2*breite+16, breite);
+                    if (((PKW)zFahrzeuge[i]).istRotesAuto()) {
+						Image redCar = Tk.getImage("data/cars/PKW/redCar.png");
+                        if (zFahrzeuge[i].gibX1() < zFahrzeuge[i].gibX2()) {
+                            arg1.drawImage(redCar, 75 + (breite + 16) * zFahrzeuge[i].gibX1(), 75 + (breite + 16) * zFahrzeuge[i].gibY1(), 2 * breite + 16, breite, this);//x0,y0,Breite,Hoehe
+                        } else {
+                            arg1.drawImage(redCar, 75 + (breite + 16) * zFahrzeuge[i].gibX2(), 75 + (breite + 16) * zFahrzeuge[i].gibY2(), 2 * breite + 16, breite, this);//x0,y0,Breite,Hoehe
+                        }
+
+                    }
+                    else{
+
+                    if (zFahrzeuge[i].gibX1() < zFahrzeuge[i].gibX2()) {
+						zBild = Tk.getImage("data/cars/PKW/car"+zFahrzeuge[i].gibFarbe()+".png");
+						arg1.drawImage(zBild, 75 + (breite + 16) * zFahrzeuge[i].gibX1(), 75 + (breite + 16) * zFahrzeuge[i].gibY1(), 2 * breite + 16, breite, this);//x0,y0,Breite,Hoehe
+                        arg1.setColor(Color.BLACK);
+                        arg1.drawRect(75 + (breite + 16) * zFahrzeuge[i].gibX1(), 75 + (breite + 16) * zFahrzeuge[i].gibY1(), 2 * breite + 16, breite);
+                    } else {
+						zBild = Tk.getImage("data/cars/PKW/car"+zFahrzeuge[i].gibFarbe()+".png");
+						arg1.drawImage(zBild, 75 + (breite + 16) * zFahrzeuge[i].gibX2(), 75 + (breite + 16) * zFahrzeuge[i].gibY2(), 2 * breite + 16, breite, this);//x0,y0,Breite,Hoehe
 						arg1.setColor(Color.BLACK);
-						arg1.drawRect(75 + (breite + 16) * zFahrzeuge[i].gibX1(), 75 + (breite + 16) * zFahrzeuge[i].gibY1(), 2*breite+16, breite);
-					}
-					else {
-						arg1.fillRect(75 + (breite + 16) * zFahrzeuge[i].gibX2(), 75 + (breite + 16) * zFahrzeuge[i].gibY2(), 2*breite+16, breite);
-						arg1.setColor(Color.BLACK);
-						arg1.drawRect(75 + (breite + 16) * zFahrzeuge[i].gibX2(), 75 + (breite + 16) * zFahrzeuge[i].gibY2(), 2*breite+16, breite);
-					}
+                        arg1.drawRect(75 + (breite + 16) * zFahrzeuge[i].gibX2(), 75 + (breite + 16) * zFahrzeuge[i].gibY2(), 2 * breite + 16, breite);
+                    }
+                }
 				}
 				else if(zFahrzeuge[i] instanceof LKW){
-					arg1.setColor(zFahrzeuge[i].gibFarbe());
+
 					if (zFahrzeuge[i].gibX1() < ((LKW)zFahrzeuge[i]).gibX3()){
-						arg1.fillRect(75 + (breite + 16) * zFahrzeuge[i].gibX1(), 75 + (breite + 16) * zFahrzeuge[i].gibY1(), 3*breite+32, breite);
+						zBild = Tk.getImage("data/cars/LKW/car1.png");
+						arg1.drawImage(zBild, 75 + (breite + 16) * zFahrzeuge[i].gibX1(), 75 + (breite + 16) * zFahrzeuge[i].gibY1(), 3*breite+32, breite, this);//x0,y0,Breite,Hoehe
 						arg1.setColor(Color.BLACK);
 						arg1.drawRect(75 + (breite + 16) * zFahrzeuge[i].gibX1(), 75 + (breite + 16) * zFahrzeuge[i].gibY1(), 3*breite+32, breite);
 					}
 					else {
-						arg1.fillRect(75 + (breite + 16) * ((LKW)zFahrzeuge[i]).gibX3(), 75 + (breite + 16) * ((LKW)zFahrzeuge[i]).gibY3(), 3*breite+32, breite);
+						zBild = Tk.getImage("data/cars/LKW/car1.png");
+						arg1.drawImage(zBild, 75 + (breite + 16) * ((LKW)zFahrzeuge[i]).gibX3(), 75 + (breite + 16) * ((LKW)zFahrzeuge[i]).gibY3(), 3*breite+32, breite, this);//x0,y0,Breite,Hoehe
 						arg1.setColor(Color.BLACK);
 						arg1.drawRect(75 + (breite + 16) * ((LKW)zFahrzeuge[i]).gibX3(), 75 + (breite + 16) * ((LKW)zFahrzeuge[i]).gibY3(), 3*breite+32, breite);
 					}

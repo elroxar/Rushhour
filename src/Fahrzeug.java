@@ -7,7 +7,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Fahrzeug {
     /* Attribute */
     protected int zX1, zY1, zX2, zY2;
-    Color zFarbe;
+    int zFarbe;
     
     /* Methoden */
     Fahrzeug(int pX1, int pY1, int pX2, int pY2){
@@ -31,6 +31,7 @@ public class Fahrzeug {
     }
 	/**
 	 * Zufälliges setzen der Farbe
+     * Bearbeitet von Louis
 	 */
 	private void setzeFarbe()
     {
@@ -38,17 +39,17 @@ public class Fahrzeug {
         //System.out.println("Random Number: " + lRandom); //DEBUG
         switch(lRandom)
         {
-            case 0: zFarbe = Color.CYAN;
+            case 0: zFarbe = 1;
             break;
-            case 1: zFarbe = Color.GREEN;
+            case 1: zFarbe = 2;
             break;
-            case 2: zFarbe = Color.MAGENTA;
+            case 2: zFarbe = 3;
             break;
-            case 3: zFarbe = Color.ORANGE;
+            case 3: zFarbe = 4;
             break;
-            case 4: zFarbe = Color.YELLOW;
+            case 4: zFarbe = 5;
             break;
-            case 5: zFarbe = Color.BLUE;
+            case 5: zFarbe = 1;
             break;
             //default: zFarbe = Color.RED;
             //break;
@@ -87,7 +88,7 @@ public class Fahrzeug {
     /**
      * @return liefert Farbe des Fahrzeugs
      */
-    public Color gibFarbe(){
+    public int gibFarbe(){
         return this.zFarbe;
     }
     /**
