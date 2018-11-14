@@ -63,7 +63,7 @@ public class Main extends JFrame implements MouseListener {
 		zMNLevelauswahl.add(zMNgradMittel);
 		zMNLevelauswahl.add(zMNgradSchwer);
 		zMNLevelauswahl.add(zMNgradExtrem);
-
+		
 		//Level nach Schwierigkeitsgrd sortieren
 		JMenuItem lLevel = new JMenuItem();
 		for (int i = 0; i < 40; i++) {

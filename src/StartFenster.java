@@ -24,11 +24,11 @@ public class StartFenster extends JFrame implements MouseListener
         setSize(1200,800);
         zStart = new Button();
         zStart.setSize(70,70);
-        zStart.paint(Toolkit.getDefaultToolkit().getImage("data/rot.png"),450,400);
+        //zStart.paint(Toolkit.getDefaultToolkit().getImage("data/rot.png"),450,400);
 
         cp.add(zStart);
         zEinstellungen = new Button();
-        zEinstellungen.paint(Toolkit.getDefaultToolkit().getImage("rot"),650,400);
+        //zEinstellungen.paint(Toolkit.getDefaultToolkit().getImage("rot"),650,400);
 
         cp.add(zEinstellungen);
         setVisible(true);

@@ -56,13 +56,12 @@ public class Draw extends Canvas {
 		if(zFahrzeuge[i] instanceof PKW)
 			//PKW?
 		{
-			arg1.setColor(Color.YELLOW);
+			arg1.setColor(zFahrzeuge[i].gibFarbe());
 			arg1.fillRect(75 + (breite + 16) * zFahrzeuge[i].gibX1(), 75 + (breite + 16) * zFahrzeuge[i].gibY1(), breite, i2);
 			arg1.fillRect(75 + (breite + 16) * zFahrzeuge[i].gibX2(), 75 + (breite + 16) * zFahrzeuge[i].gibY2() - 16, breite, breite);
-
 		}
 		else if(zFahrzeuge[i] instanceof LKW){
-			arg1.setColor(Color.GREEN);
+			arg1.setColor(zFahrzeuge[i].gibFarbe());
 			arg1.fillRect(75 + (breite + 16) * zFahrzeuge[i].gibX1(), 75 + (breite + 16) * zFahrzeuge[i].gibY1(), breite, i2);
 			arg1.fillRect(75 + (breite + 16) * zFahrzeuge[i].gibX2(), 75 + (breite + 16) * zFahrzeuge[i].gibY2(), breite, breite);
 			arg1.fillRect(75 + (breite + 16) * ((LKW)zFahrzeuge[i]).gibX3(), 75 + (breite + 16) * ((LKW)zFahrzeuge[i]).gibY3() - 16, breite, breite);
