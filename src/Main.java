@@ -136,7 +136,11 @@ public class Main extends JFrame implements MouseListener {
     	if(! zSpielbrett.istBelegt(lPosX, lPosY)){
     	    for(Fahrzeug i: zFahrzeuge) {
 		        if(i instanceof LKW) {
-			        if(i.gibX1() == lPosX && i.gibY1() == lPosY) i.fahreVor();
+			        if(i.gibX1() == lPosX && i.gibY1() == lPosY){
+			        	//zGenerate.clearFahrzeug(i);
+			        	i.fahreVor();
+			        	//zGenerate.maleFahrzeug(i);
+			        }
 			        else if(((LKW) i).gibX3() == lPosX && ((LKW) i).gibY3() == lPosY) i.fahreZurueck();
 		        }
 		        else if(i instanceof PKW) {
