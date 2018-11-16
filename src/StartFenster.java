@@ -27,17 +27,7 @@ public class StartFenster extends JFrame
         cp.setLayout(null);
 
         zStart = new Startbutton(Toolkit.getDefaultToolkit().getImage("data/play_button.jpg"),(getWidth()/2)-35,(getHeight()/2)-35, this);
-
-        zEinstellungen = new Settingsbutton(Toolkit.getDefaultToolkit().getImage("data/Settings_button.jpg"),0,0);
-        zEinstellungen.setSize(70,70);
-        zEinstellungen.setLocation(650,400);
-        cp.add(zEinstellungen);
-
-        zIcon = new Icon(Toolkit.getDefaultToolkit().getImage("data/icon.jpg"),0,0);
-        zIcon.setSize(800,200);
-        zIcon.setLocation(200,100);
-        cp.add(zIcon);
-
+        
         cp.setBackground(Color.black);
         setVisible(true);
         setResizable(false);
