@@ -28,7 +28,7 @@ public class StartFenster extends JFrame
         zStart.setLocation(450,400);
         cp.add(zStart);
 
-        zEinstellungen = new Settingsbutton(Toolkit.getDefaultToolkit().getImage("data/settings_button.jpg"),0,0);
+        zEinstellungen = new Settingsbutton(Toolkit.getDefaultToolkit().getImage("data/Settings_button.jpg"),0,0);
         zEinstellungen.setSize(70,70);
         zEinstellungen.setLocation(650,400);
         cp.add(zEinstellungen);
