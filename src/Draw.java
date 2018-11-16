@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.image.BufferedImage;
 
 //autor Louis,Ben
 public class Draw extends Canvas {
@@ -8,11 +9,12 @@ public class Draw extends Canvas {
 	Image zBild;
 	final int breite = 95;
 	private Spielbrett zSpielbrett = new Spielbrett();
-	private Graphics arg1;
+	private Graphics2D arg1;
 	public Draw() {
 		setSize(800, 800);
-		//zFahrzeuge = zSpielbrett.ladeLevel();
-		//drawFahrzeuge(zFahrzeuge);
+		zFahrzeuge = zSpielbrett.ladeLevel(1);
+		drawFahrzeuge(zFahrzeuge);
+		setBackground(Color.black);
 	}
 
 	//public void zeichneAufSpielbrett (int pLevelNummer) {
@@ -21,7 +23,9 @@ public class Draw extends Canvas {
 	
 	@Override
 	public void paint(Graphics arg) {
-		arg1 = arg;
+		BufferedImage Buff = new BufferedImage(getWidth(),getHeight(),BufferedImage.TYPE_INT_ARGB);
+		arg1 = Buff.createGraphics();
+
 		// Vierecke 95,95 Platz zwischen feldern 16///
 		//setLocation((getParent().getWidth() / 2) - (getWidth() / 2), (getParent().getHeight() / 2) - (getHeight() / 2));//getParent() = uebergeordneter Container
 
@@ -41,13 +45,13 @@ public class Draw extends Canvas {
 				if(zFahrzeuge[i] instanceof PKW)
 				//PKW?
 				{
-					if (zFahrzeuge[i].gibX1() < zFahrzeuge[i].gibX2()){
+					if (zFahrzeuge[i].gibY1() < zFahrzeuge[i].gibY2()){
 						zBild = Tk.getImage("data/cars/PKW/90/car"+zFahrzeuge[i].gibFarbe()+".png");
 						arg1.drawImage(zBild, 75 + (breite + 16) * zFahrzeuge[i].gibX2(), 75 + (breite + 16) * zFahrzeuge[i].gibY2(),  breite,2 * breite + 16, this);//x0,y0,Breite,Hoehe
 						arg1.setColor(Color.BLACK);
 						arg1.drawRect(75 + (breite + 16) * zFahrzeuge[i].gibX2(), 75 + (breite + 16) * zFahrzeuge[i].gibY2(), breite, 2*breite+16);
 					}
-					else {
+					else if (zFahrzeuge[i].gibY2() < zFahrzeuge[i].gibY1()){
 						zBild = Tk.getImage("data/cars/PKW/90/car"+zFahrzeuge[i].gibFarbe()+".png");
 						arg1.drawImage(zBild, 75 + (breite + 16) * zFahrzeuge[i].gibX1(), 75 + (breite + 16) * zFahrzeuge[i].gibY1(),  breite,2 * breite + 16, this);//x0,y0,Breite,Hoehe
 						arg1.setColor(Color.BLACK);
@@ -98,6 +102,7 @@ public class Draw extends Canvas {
                     }
                 }
 				}
+
 				else if(zFahrzeuge[i] instanceof LKW){
 
 					if (zFahrzeuge[i].gibX1() < ((LKW)zFahrzeuge[i]).gibX3()){
@@ -116,6 +121,7 @@ public class Draw extends Canvas {
 				}
 			}
 		}
+		arg.drawImage(Buff,0,0,null);
 	}
 
 	//generiere Fahrzeuge ABER noch ohne verschiebeMethode
