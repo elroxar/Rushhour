@@ -23,22 +23,22 @@ public class StartFenster extends JFrame
         Container cp = getContentPane();
         cp.setLayout(null);
 
-        zStart = new Startbutton(Toolkit.getDefaultToolkit().getImage("play_button.jpg"),0,0);
+        zStart = new Startbutton(Toolkit.getDefaultToolkit().getImage("data/play_button.jpg"),0,0);
         zStart.setSize(70,70);
         zStart.setLocation(450,400);
         cp.add(zStart);
 
-        zEinstellungen = new Settingsbutton(Toolkit.getDefaultToolkit().getImage("settings_button.jpg"),0,0);
+        zEinstellungen = new Settingsbutton(Toolkit.getDefaultToolkit().getImage("data/settings_button.jpg"),0,0);
         zEinstellungen.setSize(70,70);
         zEinstellungen.setLocation(650,400);
         cp.add(zEinstellungen);
 
-        zIcon = new Icon(Toolkit.getDefaultToolkit().getImage("Icon.java.jpg"),0,0);
+        zIcon = new Icon(Toolkit.getDefaultToolkit().getImage("data/Icon.jpg"),0,0);
         zIcon.setSize(800,200);
         zIcon.setLocation(200,100);
         cp.add(zIcon);
 
-
+        cp.setBackground(Color.black);
         setVisible(true);
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
