@@ -24,6 +24,7 @@ public class Main extends JFrame implements MouseListener {
     /* Methoden */
     public Main() {
 
+        addMouseListener(this);
 		//Standardeinstellungen
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight());
@@ -142,13 +143,17 @@ public class Main extends JFrame implements MouseListener {
 			        if(i.gibX1() == lPosX && i.gibY1() == lPosY){
 			        	//zGenerate.clearFahrzeug(i);
 			        	i.fahreVor();
+			        	this.repaint();
 			        	//zGenerate.maleFahrzeug(i);
 			        }
 			        else if(((LKW) i).gibX3() == lPosX && ((LKW) i).gibY3() == lPosY) i.fahreZurueck();
 		        }
 		        else if(i instanceof PKW) {
 			        if(i.gibX1() == lPosX && i.gibY1() == lPosY) i.fahreVor();
-			        else if(i.gibX2() == lPosX && i.gibY2() == lPosY) i.fahreZurueck();
+			        else if(i.gibX2() == lPosX && i.gibY2() == lPosY){
+				        i.fahreZurueck();
+				        this.repaint();
+			        }
 		        }
 	        }
         }
