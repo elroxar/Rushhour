@@ -40,6 +40,7 @@ public class LevelVerwaltung {
                 lLevel[i] = lLine.split(";");
                 i++;
             }
+        br.close();
         }catch(Exception e){System.out.println("Fehler beim Einlesen der Datei");}
 		return lLevel;
     }
