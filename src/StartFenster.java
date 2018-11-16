@@ -33,7 +33,7 @@ public class StartFenster extends JFrame
         zEinstellungen.setLocation(650,400);
         cp.add(zEinstellungen);
 
-        zIcon = new Icon(Toolkit.getDefaultToolkit().getImage("data/Icon.jpg"),0,0);
+        zIcon = new Icon(Toolkit.getDefaultToolkit().getImage("data/icon.jpg"),0,0);
         zIcon.setSize(800,200);
         zIcon.setLocation(200,100);
         cp.add(zIcon);
