@@ -64,7 +64,7 @@ public class Fahrzeug {
     /**
      * @return liefert X1
      */
-    public Integer gibX1(){
+    public int gibX1(){
         return this.zX1;
     }
     /**
