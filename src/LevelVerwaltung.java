@@ -49,6 +49,6 @@ public class LevelVerwaltung {
 	 * @return liefert die Rohdaten zum angegebenen Level (Position im Array)
 	 */
 	public String[] gibLevel(int pLevel){
-		return this.liesLevelEin()[pLevel];
+		return this.liesLevelEin()[pLevel--];
     }
 }//Ende Klasse: LevelVerwaltung

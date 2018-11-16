@@ -44,7 +44,7 @@ public class Settings extends JFrame implements MouseListener
         zMusikaus = new JButton("Musik aus");
         zMusikaus.setLocation(400,550);
         zMusikaus.setSize(100,100);
-        cp.add(zMusikan);
+        cp.add(zMusikaus);
         setVisible(true);
         addMouseListener(this);
     }
