@@ -22,7 +22,7 @@ public class StartFenster extends JFrame{
 		Container cp = getContentPane();
 		cp.setLayout(null);
 		
-		zStart = new Startbutton(Toolkit.getDefaultToolkit().getImage("data/play_button.jpg"), (getWidth() / 2) - 35, (getHeight() / 2) - 35, this);
+		zStart = new Startbutton(Toolkit.getDefaultToolkit().getImage("data/play_button.png"), (getWidth() / 2) - 35, (getHeight() / 2) - 35, this);
 		
 		cp.setBackground(Color.black);
 		setVisible(true);
