@@ -182,21 +182,23 @@ public class Main extends JFrame implements MouseListener{
 	 */
 	public void mousePressed(MouseEvent e)//wenn Maustaste runtergedrückt wurde
 	{
-		int lPosX = findeFeld(e.getX());
-		int lPosY = findeFeld(e.getY());
-		if(! zSpielbrett.istBelegt(lPosX, lPosY)){
-			for(Fahrzeug i: zFahrzeuge){
-				if(i instanceof LKW){
-					if(i.gibX1() == lPosX && i.gibY1() == lPosY){
-						//zGenerate.clearFahrzeug(i);
-						i.fahreVor();
-						//zGenerate.maleFahrzeug(i);
+		if(!zFahrzeuge[0].equals(null)){
+			int lPosX = findeFeld(e.getX());
+			int lPosY = findeFeld(e.getY());
+			if(! zSpielbrett.istBelegt(lPosX, lPosY)){
+				for(Fahrzeug i: zFahrzeuge){
+					if(i instanceof LKW){
+						if(i.gibX1() == lPosX && i.gibY1() == lPosY){
+							//zGenerate.clearFahrzeug(i);
+							i.fahreVor();
+							//zGenerate.maleFahrzeug(i);
+						}
+						else if(((LKW)i).gibX3() == lPosX && ((LKW)i).gibY3() == lPosY) i.fahreZurueck();
 					}
-					else if(((LKW)i).gibX3() == lPosX && ((LKW)i).gibY3() == lPosY) i.fahreZurueck();
-				}
-				else if(i instanceof PKW){
-					if(i.gibX1() == lPosX && i.gibY1() == lPosY) i.fahreVor();
-					else if(i.gibX2() == lPosX && i.gibY2() == lPosY) i.fahreZurueck();
+					else if(i instanceof PKW){
+						if(i.gibX1() == lPosX && i.gibY1() == lPosY) i.fahreVor();
+						else if(i.gibX2() == lPosX && i.gibY2() == lPosY) i.fahreZurueck();
+					}
 				}
 			}
 		}

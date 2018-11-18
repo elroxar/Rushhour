@@ -13,14 +13,14 @@ public class LevelVerwaltung{
 	
 	/* Methoden */
 	LevelVerwaltung(){
-		zLevel = new String[8][]; //TODO: Zurück auf 40 ändern nach Vervollständigung aller Level
+		zLevel = new String[10][]; //TODO: Zurück auf 40 ändern nach Vervollständigung aller Level
 	}
 	
 	/**
 	 * @return liefert Die Rohdaten aller Level in einem 2Dimensionalem Array
 	 */
 	private String[][] liesLevelEin(){
-		String[][] lLevel = new String[8][]; //TODO: Anpassen auf Level Menge
+		String[][] lLevel = new String[10][]; //TODO: Anpassen auf Level Menge
 		try{
 			fr = new FileReader("data/level.csv");
 			br = new BufferedReader(fr);
