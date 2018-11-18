@@ -182,7 +182,7 @@ public class Main extends JFrame implements MouseListener{
 	 */
 	public void mousePressed(MouseEvent e)//wenn Maustaste runtergedrückt wurde
 	{
-		if(!zFahrzeuge[0].equals(null)){
+		if(zFahrzeuge[0] != null){
 			int lPosX = findeFeld(e.getX());
 			int lPosY = findeFeld(e.getY());
 			if(! zSpielbrett.istBelegt(lPosX, lPosY)){
