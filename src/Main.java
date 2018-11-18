@@ -31,7 +31,7 @@ public class Main extends JFrame implements MouseListener{
 		//Standardeinstellungen
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int)Toolkit.getDefaultToolkit().getScreenSize().getHeight());
-		setAlwaysOnTop(true);
+		setAlwaysOnTop(false); //TODO: Auf true setzen
 		
 		setVisible(true);
 		setResizable(true);

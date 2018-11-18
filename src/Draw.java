@@ -13,14 +13,9 @@ public class Draw extends Canvas{
 	
 	public Draw(){
 		setSize(800, 800);
-		zFahrzeuge = zSpielbrett.ladeLevel(1);
-		drawFahrzeuge(zFahrzeuge);
+		zFahrzeuge = new Fahrzeug[0];
 		setBackground(Color.black);
 	}
-	
-	//public void zeichneAufSpielbrett (int pLevelNummer) {
-	//drawFahrzeuge(zSpielbrett.ladeLevel(pLevelNummer - 1));
-	//}
 	
 	@Override
 	public void paint(Graphics arg){
