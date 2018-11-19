@@ -141,6 +141,7 @@ public class Main extends JFrame implements MouseListener{
 	 */
 	public void mouseClicked(MouseEvent e)//wenn Maus geklickt wurde//Feldabfrage//e.getx/y
 	{
+		/*
 		int lPosX = findeFeld(e.getX());
 		int lPosY = findeFeld(e.getY());
 		if(! zSpielbrett.istBelegt(lPosX, lPosY)){
@@ -161,20 +162,11 @@ public class Main extends JFrame implements MouseListener{
 						this.repaint();
 					}
 				}
+			}
+		}
+		*/
+	}
 
-
-						}
-
-					}
-
-				}
-
-
-
-
-	
-	//zGenerate.repaint();
-	//if(e.getx())
 	private int findeFeld(int pPos){
 		if(pPos >= 75 && pPos <= 170) return 0;
 		else if(pPos >= 186 && pPos <= 281) return 1;
