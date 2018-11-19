@@ -103,7 +103,8 @@ public class Main extends JFrame implements MouseListener{
 	 *
 	 */
 	public void update(){} //ist die mouseClicked Methode
-	
+
+
 	private boolean stoesstZusammen(int pX, int pY, char pDir){
 		boolean lErfolg = true;
 		int lPosX, lPosY;
