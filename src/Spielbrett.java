@@ -1,12 +1,18 @@
+
+import javax.swing.*;
+import java.awt.*;
+
 /**
  * @author theo, louis
  * @version 30/10/18
  */
-public class Spielbrett{
+public class Spielbrett extends JFrame{
 	/* Attribute */
 	private boolean[][] zSpielbrett;
 	private int[][][] zSpielbrettKoord;
 	private LevelVerwaltung zLV;
+	private Fahrzeug [] zFahrzeuge;
+	private JPanel Panel;
 	
 	/* Methoden *///
 	Spielbrett(){
@@ -35,6 +41,24 @@ public class Spielbrett{
 			//System.out.println(zMarginY);
 		}
 	}
+	public void rotesAutoAmZiel() {
+		for (int i = 0; i < zFahrzeuge.length; i++) {
+			if (zSpielbrettKoord[5][2][0] == zFahrzeuge[i].gibX1()) {
+				if (zSpielbrettKoord[5][2][1] == zFahrzeuge[i].gibY1()) {
+					if(zFahrzeuge[i].istRotesAuto())
+					Panel = new JPanel();
+					Panel.setToolTipText("Gewonnen!");
+					Panel.setSize(100, 100);
+					Panel.setLocation((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth() / 2, (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() / 2);
+                    break;
+				}
+			}
+
+		}rotesAutoAmZiel();
+
+	}
+
+
 	
 	/**
 	 * @param pLevel Arrayposition des zu ladenden Levels (Levelnummer - 1)
