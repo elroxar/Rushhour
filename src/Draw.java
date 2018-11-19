@@ -13,9 +13,10 @@ public class Draw extends Canvas{
 	
 	public Draw(){
 		setSize(800, 800);
-		zFahrzeuge = new Fahrzeug[0];
+		//drawFahrzeuge(zSpielbrett.ladeLevel());
 		setBackground(Color.black);
 	}
+
 	
 	@Override
 	public void paint(Graphics arg){
@@ -41,15 +42,13 @@ public class Draw extends Canvas{
 				{
 					if(zFahrzeuge[i].gibY1() < zFahrzeuge[i].gibY2()){
 						zBild = Tk.getImage("data/cars/PKW/90/car" + zFahrzeuge[i].gibFarbe() + ".png");
+						arg1.drawImage(zBild,(breite +16)*zFahrzeuge[i].gibX2(), (breite+16)* zFahrzeuge[i].gibY2(), breite, 2 * breite + 16, this);//x0,y0,Breite,Hoehe
 						arg1.drawImage(zBild, 75 + (breite + 16) * zFahrzeuge[i].gibX1(), 75 + (breite + 16) * zFahrzeuge[i].gibY1(), breite, 2 * breite + 16, this);//x0,y0,Breite,Hoehe
-						arg1.setColor(Color.BLACK);
-						arg1.drawRect(75 + (breite + 16) * zFahrzeuge[i].gibX2(), 75 + (breite + 16) * zFahrzeuge[i].gibY2(), breite, 2 * breite + 16);
 					}
 					else{
 						zBild = Tk.getImage("data/cars/PKW/90/car" + zFahrzeuge[i].gibFarbe() + ".png");
+						arg1.drawImage(zBild, (breite+16)* zFahrzeuge[i].gibX1(), (breite+16)* zFahrzeuge[i].gibY1(), breite, 2 * breite + 16, this);//x0,y0,Breite,Hoehe
 						arg1.drawImage(zBild, 75 + (breite + 16) * zFahrzeuge[i].gibX2(), 75 + (breite + 16) * zFahrzeuge[i].gibY2(), breite, 2 * breite + 16, this);//x0,y0,Breite,Hoehe
-						arg1.setColor(Color.BLACK);
-						arg1.drawRect(75 + (breite + 16) * zFahrzeuge[i].gibX1(), 75 + (breite + 16) * zFahrzeuge[i].gibY1(), breite, 2 * breite + 16);
 					}
 				}
 				else if(zFahrzeuge[i] instanceof LKW){
