@@ -9,11 +9,8 @@ import java.awt.image.BufferedImage;
 public class StartFenster extends JFrame{
 	
 	private JLabel zTitel;
-	
 	private Startbutton zStart;
-	
 	private Thread th;
-	
 	
 	public StartFenster(){
 		super("Rushhour-The Game");
