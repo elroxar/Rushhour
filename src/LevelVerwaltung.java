@@ -1,5 +1,7 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOError;
+import java.io.IOException;
 
 /**
  * @author theo
@@ -13,14 +15,14 @@ public class LevelVerwaltung{
 	
 	/* Methoden */
 	LevelVerwaltung(){
-		zLevel = new String[10][]; //TODO: Zurück auf 40 ändern nach Vervollständigung aller Level
+		zLevel = new String[14][]; //TODO: Zurück auf 40 ändern nach Vervollständigung aller Level
 	}
 	
 	/**
 	 * @return liefert Die Rohdaten aller Level in einem 2Dimensionalem Array
 	 */
 	private String[][] liesLevelEin(){
-		String[][] lLevel = new String[10][]; //TODO: Anpassen auf Level Menge
+		String[][] lLevel = new String[14][]; //TODO: Anpassen auf Level Menge
 		try{
 			fr = new FileReader("data/level.csv");
 			br = new BufferedReader(fr);
@@ -43,7 +45,11 @@ public class LevelVerwaltung{
 				i++;
 			}
 			br.close();
-		} catch(Exception e){System.out.println("Fehler beim Einlesen der Datei");}
+			fr.close();
+		}
+		catch(IOException e){System.out.println("Fehler beim Einlesen der Datei");e.printStackTrace();}
+		catch(IOError e){System.out.println("GFhler beim Einlesen der Datei"); e.printStackTrace();}
+		catch(Exception e){System.out.println("Fehler in der CSV Datei");e.printStackTrace();}
 		return lLevel;
 	}
 	
