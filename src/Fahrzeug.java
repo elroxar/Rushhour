@@ -7,7 +7,8 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Fahrzeug{
 	/* Attribute */
 	protected int zX1, zY1, zX2, zY2;
-	int zFarbe;
+	int z2,zFarbe;
+	private PKW zPKW;
 	
 	/* Methoden */
 	Fahrzeug(int pX1, int pY1, int pX2, int pY2){
@@ -52,7 +53,8 @@ public class Fahrzeug{
 			//break;
 		}
 	}
-	
+	public boolean istRotesAuto(){return zPKW.istRotesAuto();}
+
 	/**
 	 * @return liefert Ausrichtung
 	 */

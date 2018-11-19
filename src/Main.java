@@ -5,7 +5,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 /**
- * @author louis, ben
+ * @author louis, ben ,theo
  * @version 05/11/2018
  */
 public class Main extends JFrame implements MouseListener{
@@ -161,9 +161,17 @@ public class Main extends JFrame implements MouseListener{
 						this.repaint();
 					}
 				}
-			}
-		}
-	}
+
+
+						}
+
+					}
+
+				}
+
+
+
+
 	
 	//zGenerate.repaint();
 	//if(e.getx())
@@ -203,6 +211,7 @@ public class Main extends JFrame implements MouseListener{
 			}
 		}
 	}
+
 	
 	/**
 	 * @param e MouseEvent Object
