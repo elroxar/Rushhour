@@ -26,14 +26,11 @@ public class Startbutton implements MouseListener{
 	
 	public void paint(Graphics arg){
 		Graphics2D gr2d = (Graphics2D)arg;
-		//        gr2d.setBackground(new Color(0,0,0,0));
-		//        gr2d.clearRect(x,y,70,70);
-		
 		Point p = comp.getMousePosition(); //Mouslocation on Window
 		if(p != null){
 			if(p.getX() >= x && p.getX() <= x + 70 && p.getY() >= y && p.getY() <= y + 70){
-				gr2d.setColor(Color.YELLOW);
-				gr2d.fillRect(x, y, 70, 70);
+				gr2d.setColor(Color.blue);
+				gr2d.fillOval(x, y, 70, 70);//gelber Hintergrund hinter dem Button
 			}
 		}
 		gr2d.setColor(Color.BLACK);
