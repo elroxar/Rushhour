@@ -176,4 +176,39 @@ public class Fahrzeug{
 		}
 		return lErfolg;
 	}
+	
+	public int [] woIstMeineSchnauze() {
+		int [] lpos  = new int [2];
+		
+		if (zX1 > zX2)//horizontal??
+		{
+			
+			lpos[0] = zX1;
+			lpos[1] = zY1;
+			
+		}
+		else if (zX2 > zX1)
+		{
+			
+			lpos[0] = zX1;
+			lpos[1] = zY1;
+		}
+		
+		else if (zX1 == zX2)
+		{
+			if(zY1<zY2)
+			{
+				
+				lpos[0] = zX1;
+				lpos[1] = zY1;
+			}
+			else if(zY2<zY1)
+			{
+				
+				lpos[0] = zX1;
+				lpos[1] = zY1;
+			}
+		}
+		return lpos;
+	}
 }//Ende Klasse: Fahrzeug

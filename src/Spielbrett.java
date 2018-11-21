@@ -126,4 +126,8 @@ public class Spielbrett extends JFrame{
 	public boolean istBelegt(int pX, int pY){
 		return zSpielbrett[pX][pY];
 	}
+	
+	public void entferneFeld(int pX, int pY){
+		zSpielbrett[pX][pY] = false;
+	}
 }//Ende Klasse: Spielbrett
