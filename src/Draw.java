@@ -16,13 +16,14 @@ public class Draw extends Canvas implements MouseListener{
 	public Draw(){
 		setSize(800, 800);
 		zFahrzeuge = new Fahrzeug[0];
-		setBackground(Color.black);
+		setBackground(Color.gray);
 		addMouseListener(this);
 	}
 	
 	@Override
 	public void paint(Graphics arg){
 		BufferedImage Buff = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_ARGB);
+		arg.setColor(Color.white);
 		arg1 = Buff.createGraphics();
 		
 		// Vierecke 95,95 Platz zwischen feldern 16///
